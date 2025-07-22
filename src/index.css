@@ -9,40 +9,43 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 11% 15%;
+    --foreground: 220 13% 18%;
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 15%;
+    --card-foreground: 220 13% 18%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
-    --primary: 210 100% 15%;
+    --popover-foreground: 220 13% 18%;
+    --primary: 220 70% 25%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 210 11% 15%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 200 100% 35%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 13% 18%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 195 85% 45%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 210 100% 15%;
-    --industrial-blue: 210 100% 15%;
-    --industrial-steel: 210 11% 71%;
-    --industrial-dark: 210 22% 22%;
-    --metallic-accent: 200 15% 85%;
-    --precision-orange: 25 95% 53%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 70% 25%;
+    --confidence-blue: 220 70% 25%;
+    --trust-navy: 220 85% 15%;
+    --courage-cyan: 195 85% 45%;
+    --determination-steel: 220 10% 60%;
+    --professional-silver: 220 8% 85%;
+    --success-emerald: 142 76% 36%;
     --radius: 0.5rem;
     
-    /* Industrial gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-steel: linear-gradient(145deg, hsl(var(--industrial-steel)), hsl(var(--metallic-accent)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--industrial-dark)), hsl(var(--primary)));
+    /* Professional gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--confidence-blue)), hsl(var(--courage-cyan)));
+    --gradient-trust: linear-gradient(145deg, hsl(var(--trust-navy)), hsl(var(--confidence-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--trust-navy)), hsl(var(--courage-cyan)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--professional-silver)));
     
-    /* Industrial shadows */
-    --shadow-industrial: 0 10px 30px -10px hsl(var(--primary) / 0.3);
-    --shadow-steel: 0 8px 25px -8px hsl(var(--industrial-steel) / 0.4);
-    --shadow-precision: 0 4px 20px -4px hsl(var(--precision-orange) / 0.3);
+    /* Professional shadows */
+    --shadow-confidence: 0 10px 30px -10px hsl(var(--confidence-blue) / 0.3);
+    --shadow-trust: 0 8px 25px -8px hsl(var(--trust-navy) / 0.4);
+    --shadow-courage: 0 4px 20px -4px hsl(var(--courage-cyan) / 0.3);
+    --shadow-professional: 0 2px 15px -3px hsl(var(--determination-steel) / 0.2);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -55,30 +58,31 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 210 22% 22%;
-    --foreground: 210 40% 98%;
-    --card: 210 22% 22%;
-    --card-foreground: 210 40% 98%;
-    --popover: 210 22% 22%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 200 100% 35%;
-    --primary-foreground: 210 22% 22%;
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 25 95% 53%;
-    --accent-foreground: 210 22% 22%;
+    --background: 220 25% 8%;
+    --foreground: 220 15% 95%;
+    --card: 220 25% 8%;
+    --card-foreground: 220 15% 95%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 220 15% 95%;
+    --primary: 195 85% 45%;
+    --primary-foreground: 220 25% 8%;
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 15% 95%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 220 70% 25%;
+    --accent-foreground: 220 15% 95%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 200 100% 35%;
-    --industrial-blue: 200 100% 35%;
-    --industrial-steel: 210 11% 40%;
-    --industrial-dark: 210 22% 15%;
-    --metallic-accent: 210 20% 25%;
-    --precision-orange: 25 95% 53%;
+    --destructive-foreground: 220 15% 95%;
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 195 85% 45%;
+    --confidence-blue: 195 85% 45%;
+    --trust-navy: 220 85% 20%;
+    --courage-cyan: 195 85% 55%;
+    --determination-steel: 220 15% 45%;
+    --professional-silver: 220 12% 25%;
+    --success-emerald: 142 76% 40%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -111,31 +115,108 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Industrial button variants */
-  .btn-industrial {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
-    @apply bg-gradient-to-r from-blue-900 to-blue-800 text-white hover:from-blue-800 hover:to-blue-700 shadow-lg;
+  /* Professional button variants */
+  .btn-professional {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    background: var(--gradient-primary);
+    @apply text-white hover:scale-105 shadow-lg;
+    box-shadow: var(--shadow-confidence);
   }
   
-  .btn-precision {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    @apply bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg;
+  .btn-confidence {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    background: var(--gradient-trust);
+    @apply text-white hover:scale-105 shadow-lg;
+    box-shadow: var(--shadow-trust);
   }
   
-  /* Industrial card styles */
-  .card-industrial {
-    @apply rounded-lg border bg-card text-card-foreground shadow-lg;
-    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--metallic-accent)));
+  /* Professional card styles */
+  .card-professional {
+    @apply rounded-xl border bg-card text-card-foreground shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02];
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-professional);
   }
   
-  /* Industrial section backgrounds */
-  .section-industrial {
+  /* Professional section backgrounds */
+  .section-professional {
     @apply relative overflow-hidden;
     background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
   }
   
-  .section-steel {
+  .section-trust {
     @apply relative;
-    background: linear-gradient(145deg, hsl(var(--industrial-steel) / 0.1), hsl(var(--metallic-accent) / 0.1));
+    background: linear-gradient(145deg, hsl(var(--professional-silver) / 0.1), hsl(var(--determination-steel) / 0.1));
+  }
+  
+  /* Animation utilities */
+  .slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .scale-in {
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  .client-slide {
+    animation: clientSlide 30s linear infinite;
+  }
+  
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes clientSlide {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 }

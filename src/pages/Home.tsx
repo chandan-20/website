@@ -11,8 +11,13 @@ import {
   ArrowRight,
   Shield,
   Settings,
-  Zap
+  Zap,
+  Target,
+  Heart,
+  Sparkles
 } from "lucide-react";
+import IndiaMap from "@/components/IndiaMap";
+import ClientShowcase from "@/components/ClientShowcase";
 
 const Home = () => {
   const features = [
@@ -55,46 +60,62 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{ background: 'var(--gradient-hero)' }}
+        ></div>
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2">
+            <Badge className="mb-6 bg-gradient-to-r from-confidence-blue to-courage-cyan text-white px-6 py-3 text-sm font-semibold rounded-full slide-up">
+              <Sparkles className="mr-2 h-4 w-4" />
               Trusted CNC Manufacturing Partner
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 heading-industrial">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 heading-industrial text-foreground fade-in-up">
               Precision CNC Machining
-              <span className="block text-orange-400">Trusted for Over 23 Years</span>
+              <span className="block bg-gradient-to-r from-confidence-blue to-courage-cyan bg-clip-text text-transparent">
+                Built on Trust & Excellence
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 text-industrial">
-              Delivering excellence in precision manufacturing with state-of-the-art 
-              CNC technology for automotive, aerospace, and industrial applications.
+            <p className="text-xl md:text-2xl mb-8 text-muted-foreground text-industrial fade-in-up" style={{ animationDelay: '0.2s' }}>
+              Engineering precision for over 23 years with cutting-edge CNC technology, 
+              delivering unmatched quality and reliability across industries.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="btn-precision text-lg px-8 py-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center scale-in" style={{ animationDelay: '0.4s' }}>
+              <Button asChild size="lg" className="btn-professional text-lg px-8 py-6">
                 <Link to="/contact">
-                  Request a Quote <ArrowRight className="ml-2 h-5 w-5" />
+                  <Target className="mr-2 h-5 w-5" />
+                  Request a Quote
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-blue-900">
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <Link to="/services">
                   View Our Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
           </div>
         </div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-20 left-10 animate-float opacity-30">
+          <Cog className="h-8 w-8 text-primary" />
+        </div>
+        <div className="absolute bottom-20 right-10 animate-float opacity-30" style={{ animationDelay: '2s' }}>
+          <Settings className="h-8 w-8 text-courage-cyan" />
+        </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 section-industrial">
+      <section className="py-20 section-professional">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-industrial text-primary">
               Why Choose Shree Varshitha Automates?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experience the difference that precision, quality, and decades of expertise make
+              Built on courage, determination, confidence, and unwavering trust
             </p>
           </div>
           
@@ -102,12 +123,15 @@ const Home = () => {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="card-industrial text-center p-6 hover:shadow-xl transition-all duration-300">
+                <Card key={index} className="card-professional text-center p-6 group fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
                   <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-900 to-blue-800 rounded-full flex items-center justify-center">
+                    <div 
+                      className="w-16 h-16 mx-auto mb-4 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                      style={{ background: 'var(--gradient-primary)' }}
+                    >
                       <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                    <CardTitle className="text-xl text-primary">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-base">
@@ -122,12 +146,23 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
-        <div className="container mx-auto px-4">
+      <section 
+        className="py-16 text-white relative overflow-hidden"
+        style={{ background: 'var(--gradient-trust)' }}
+      >
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 animate-float">
+            <Heart className="h-12 w-12" />
+          </div>
+          <div className="absolute bottom-10 right-10 animate-float" style={{ animationDelay: '1s' }}>
+            <Target className="h-12 w-12" />
+          </div>
+        </div>
+        <div className="relative container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2 text-orange-400">
+              <div key={index} className="text-center scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-courage-cyan">
                   {stat.number}
                 </div>
                 <div className="text-lg opacity-90">{stat.label}</div>
@@ -180,10 +215,31 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className="py-20 section-steel">
+      {/* India Map Section */}
+      <section className="py-20 section-trust">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-industrial text-primary">
+              Our Operations Across India
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Serving clients across Gujarat and Karnataka with excellence and precision
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto scale-in">
+            <IndiaMap />
+          </div>
+        </div>
+      </section>
+
+      {/* Client Showcase */}
+      <ClientShowcase />
+
+      {/* Industries Section */}
+      <section className="py-20 section-professional">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-industrial text-primary">
               Industries We Serve
             </h2>
@@ -194,9 +250,11 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((industry, index) => (
-              <Card key={index} className="card-industrial p-6 hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="card-professional p-6 group fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-center">{industry.name}</CardTitle>
+                  <CardTitle className="text-xl text-center text-primary group-hover:text-courage-cyan transition-colors duration-300">
+                    {industry.name}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-center">
@@ -207,8 +265,8 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <Button asChild variant="outline" size="lg">
+          <div className="text-center mt-12 scale-in">
+            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               <Link to="/industries">
                 Explore All Industries <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -218,24 +276,37 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 heading-industrial">
+      <section 
+        className="py-20 text-white relative overflow-hidden"
+        style={{ background: 'var(--gradient-primary)' }}
+      >
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-1/4 animate-float">
+            <Sparkles className="h-16 w-16" />
+          </div>
+          <div className="absolute bottom-10 right-1/4 animate-float" style={{ animationDelay: '1.5s' }}>
+            <Target className="h-16 w-16" />
+          </div>
+        </div>
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 heading-industrial fade-in-up">
             Ready to Start Your Precision Manufacturing Project?
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Get in touch with our expert team for a consultation and detailed quote 
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Partner with us for engineering excellence. Get a consultation and detailed quote 
             tailored to your specific requirements.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center scale-in" style={{ animationDelay: '0.4s' }}>
+            <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-primary hover:bg-background">
               <Link to="/contact">
+                <Heart className="mr-2 h-5 w-5" />
                 Request Quote Now
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-orange-600">
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-primary">
               <Link to="/gallery">
                 View Our Work
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>

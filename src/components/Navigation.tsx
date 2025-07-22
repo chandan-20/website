@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone, Mail } from "lucide-react";
+import Logo from "./Logo";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +26,11 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded bg-gradient-to-r from-blue-900 to-blue-800 text-white font-bold">
-              SV
-            </div>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <Logo size="md" className="transition-transform duration-300 group-hover:scale-110" />
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-primary">Shree Varshitha</span>
-              <span className="text-xs text-muted-foreground">Automates</span>
+              <span className="font-bold text-lg text-primary leading-tight">Shree Varshitha</span>
+              <span className="text-xs text-muted-foreground font-medium">Automates</span>
             </div>
           </Link>
 
@@ -58,7 +57,7 @@ const Navigation = () => {
               <Phone className="h-4 w-4" />
               <span>+91-XXX-XXX-XXXX</span>
             </div>
-            <Button asChild className="btn-precision">
+            <Button asChild className="btn-professional">
               <Link to="/contact">Request Quote</Link>
             </Button>
           </div>
@@ -72,10 +71,8 @@ const Navigation = () => {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col space-y-4 mt-6">
-                <div className="flex items-center space-x-2 mb-6">
-                  <div className="flex h-8 w-8 items-center justify-center rounded bg-gradient-to-r from-blue-900 to-blue-800 text-white font-bold">
-                    SV
-                  </div>
+                <div className="flex items-center space-x-3 mb-6">
+                  <Logo size="md" />
                   <div className="flex flex-col">
                     <span className="text-lg font-bold text-primary">Shree Varshitha</span>
                     <span className="text-xs text-muted-foreground">Automates</span>
@@ -104,7 +101,7 @@ const Navigation = () => {
                     <Mail className="h-4 w-4" />
                     <span>info@shreevarshitha.com</span>
                   </div>
-                  <Button asChild className="btn-precision w-full">
+                  <Button asChild className="btn-professional w-full">
                     <Link to="/contact" onClick={() => setIsOpen(false)}>
                       Request Quote
                     </Link>
