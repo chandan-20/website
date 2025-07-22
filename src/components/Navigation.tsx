@@ -30,7 +30,7 @@ const Navigation = () => {
             <Logo size="md" className="transition-transform duration-300 group-hover:scale-110" />
             <div className="flex flex-col">
               <span className="font-bold text-lg text-primary leading-tight">Shree Varshitha</span>
-              <span className="text-xs text-muted-foreground font-medium">Automates</span>
+              <span className="text-xs text-muted-foreground font-medium">Automats</span>
             </div>
           </Link>
 
@@ -75,7 +75,7 @@ const Navigation = () => {
                   <Logo size="md" />
                   <div className="flex flex-col">
                     <span className="text-lg font-bold text-primary">Shree Varshitha</span>
-                    <span className="text-xs text-muted-foreground">Automates</span>
+                    <span className="text-xs text-muted-foreground">Automats</span>
                   </div>
                 </div>
                 
@@ -99,7 +99,7 @@ const Navigation = () => {
                   </div>
                   <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                     <Mail className="h-4 w-4" />
-                    <span>info@shreevarshitha.com</span>
+                    <span>shreevarshithaautomats@gmail.com</span>
                   </div>
                   <Button asChild className="btn-professional w-full">
                     <Link to="/contact" onClick={() => setIsOpen(false)}>

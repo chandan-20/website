@@ -3,18 +3,18 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+    <footer className="section-professional" style={{ background: 'var(--gradient-trust)' }}>
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded bg-white text-blue-900 font-bold">
-                SV
+              <div className="flex h-8 w-8 items-center justify-center rounded bg-gradient-primary text-white font-bold glow">
+                SVA
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold">Shree Varshitha</span>
-                <span className="text-sm opacity-90">Automates</span>
+                <span className="text-sm opacity-90">Automats</span>
               </div>
             </div>
             <p className="text-sm opacity-90 leading-relaxed">
@@ -57,7 +57,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 opacity-90" />
-                <span className="text-sm opacity-90">info@shreevarshitha.com</span>
+                <span className="text-sm opacity-90">shreevarshithaautomats@gmail.com</span>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 opacity-90 mt-0.5" />
@@ -76,7 +76,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm opacity-90">
-            © 2024 Shree Varshitha Automates. All rights reserved.
+            © 2024 Shree Varshitha Automats. All rights reserved.
           </p>
           <p className="text-sm opacity-90 mt-2 md:mt-0">
             Precision CNC Machining • Quality • Reliability

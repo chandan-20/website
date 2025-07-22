@@ -168,10 +168,10 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-800 text-white py-20">
+      <section className="section-professional py-20 text-white fade-in-up" style={{ background: 'var(--gradient-hero)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2">
+            <Badge className="mb-6 bg-courage-orange hover:bg-courage-orange text-white px-4 py-2 slide-up">
               CNC Manufacturing Services
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 heading-industrial">
@@ -304,13 +304,13 @@ const Services = () => {
       </section>
 
       {/* Quality Assurance */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <section className="py-20 text-white section-professional" style={{ background: 'var(--gradient-trust)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center">
-                <Award className="h-10 w-10 text-white" />
-              </div>
+            <div className="w-20 h-20 bg-gradient-premium rounded-full flex items-center justify-center glow">
+              <Award className="h-10 w-10 text-white" />
+            </div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 heading-industrial">
               Quality Guaranteed
@@ -321,19 +321,19 @@ const Services = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-orange-400 mb-2">±0.001mm</div>
+                <div className="text-3xl font-bold text-precision-gold glow mb-2">±0.001mm</div>
                 <div className="text-sm opacity-90">Tolerance Capability</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-orange-400 mb-2">99.9%</div>
+                <div className="text-3xl font-bold text-precision-gold glow mb-2">99.9%</div>
                 <div className="text-sm opacity-90">Quality Rate</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-orange-400 mb-2">100%</div>
+                <div className="text-3xl font-bold text-precision-gold glow mb-2">100%</div>
                 <div className="text-sm opacity-90">Inspection</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-orange-400 mb-2">ISO</div>
+                <div className="text-3xl font-bold text-precision-gold glow mb-2">ISO</div>
                 <div className="text-sm opacity-90">Certified</div>
               </div>
             </div>

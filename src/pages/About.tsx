@@ -71,14 +71,14 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-800 text-white py-20">
+      <section className="section-professional py-20 text-white fade-in-up" style={{ background: 'var(--gradient-hero)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2">
+            <Badge className="mb-6 bg-courage-orange hover:bg-courage-orange text-white px-4 py-2 slide-up">
               Our Story
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 heading-industrial">
-              About Shree Varshitha Automates
+              About Shree Varshitha Automats
             </h1>
             <p className="text-xl opacity-90 text-industrial">
               Over two decades of precision manufacturing excellence, innovation, 
@@ -172,7 +172,7 @@ const About = () => {
               Our Journey of Excellence
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Key milestones that shaped Shree Varshitha Automates into the industry leader we are today
+              Key milestones that shaped Shree Varshitha Automats into the industry leader we are today
             </p>
           </div>
           
@@ -235,23 +235,23 @@ const About = () => {
       </section>
 
       {/* Company Stats */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <section className="py-16 text-white section-professional" style={{ background: 'var(--gradient-trust)' }}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-orange-400">23+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-courage-orange glow">23+</div>
               <div className="text-lg opacity-90">Years in Business</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-orange-400">5000+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-courage-orange glow">5000+</div>
               <div className="text-lg opacity-90">Projects Completed</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-orange-400">150+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-courage-orange glow">150+</div>
               <div className="text-lg opacity-90">Satisfied Clients</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-orange-400">99.9%</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-courage-orange glow">99.9%</div>
               <div className="text-lg opacity-90">Quality Rate</div>
             </div>
           </div>
