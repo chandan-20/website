@@ -8,50 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 13% 18%;
+    --background: 35 36% 91%;
+    --foreground: 203 77% 17%;
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 18%;
+    --card-foreground: 203 77% 17%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 18%;
-    --primary: 232 67% 28%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 232 15% 92%;
-    --secondary-foreground: 232 20% 15%;
-    --muted: 232 12% 95%;
-    --muted-foreground: 232 8% 45%;
-    --accent: 14 85% 55%;
-    --accent-foreground: 0 0% 98%;
+    --popover-foreground: 203 77% 17%;
+    --primary: 203 77% 17%;
+    --primary-foreground: 35 36% 95%;
+    --secondary: 203 50% 35%;
+    --secondary-foreground: 35 36% 95%;
+    --muted: 35 20% 85%;
+    --muted-foreground: 203 30% 45%;
+    --accent: 203 50% 35%;
+    --accent-foreground: 35 36% 95%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 232 12% 88%;
-    --input: 232 12% 88%;
-    --ring: 232 67% 28%;
+    --destructive-foreground: 35 36% 95%;
+    --border: 203 30% 88%;
+    --input: 203 30% 88%;
+    --ring: 203 77% 17%;
     
-    /* Professional Color Palette - Based on SV Logo Design */
-    --primary-blue: 200 100% 15%;        /* Deep Professional Blue from logo */
-    --secondary-blue: 200 85% 25%;       /* Slightly lighter blue */
-    --accent-teal: 180 100% 20%;         /* Teal accent from logo */
+    /* User Specified Colors - Dark Blue & Beige/Cream */
+    --brand-dark-blue: 203 77% 17%;      /* #0A2D4D - Primary brand color */
+    --brand-cream: 35 36% 91%;           /* #F1E9DF - Background color */
+    --brand-blue-light: 203 50% 35%;     /* Lighter variant of dark blue */
     --professional-grey: 210 10% 50%;    /* Professional grey */
-    --light-grey: 210 15% 85%;           /* Light grey background */
-    --text-dark: 210 20% 20%;            /* Dark text */
-    --text-light: 210 5% 95%;            /* Light text */
+    --text-dark: 203 77% 17%;            /* Dark text using brand blue */
+    --text-light: 35 36% 95%;            /* Light text */
     --radius: 0.5rem;
     
-    /* Professional gradients based on SV logo colors */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-blue)), hsl(var(--accent-teal)));
-    --gradient-header: linear-gradient(145deg, hsl(var(--primary-blue)), hsl(var(--secondary-blue)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-blue)), hsl(var(--accent-teal)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--light-grey)));
-    --gradient-footer: linear-gradient(145deg, hsl(var(--primary-blue)), hsl(var(--secondary-blue)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-teal)), hsl(var(--secondary-blue)));
+    /* Brand gradients using specified colors */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-dark-blue)), hsl(var(--brand-blue-light)));
+    --gradient-header: linear-gradient(145deg, hsl(var(--brand-dark-blue)), hsl(var(--brand-blue-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-dark-blue)), hsl(var(--brand-blue-light)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--brand-cream)), hsl(var(--background)));
+    --gradient-footer: linear-gradient(145deg, hsl(var(--brand-dark-blue)), hsl(var(--brand-blue-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--brand-blue-light)), hsl(var(--brand-dark-blue)));
     
-    /* Professional shadows based on new color scheme */
-    --shadow-primary: 0 12px 35px -12px hsl(var(--primary-blue) / 0.35);
-    --shadow-secondary: 0 10px 30px -10px hsl(var(--secondary-blue) / 0.4);
-    --shadow-accent: 0 6px 25px -6px hsl(var(--accent-teal) / 0.35);
+    /* Professional shadows using brand colors */
+    --shadow-primary: 0 12px 35px -12px hsl(var(--brand-dark-blue) / 0.35);
+    --shadow-secondary: 0 10px 30px -10px hsl(var(--brand-blue-light) / 0.4);
+    --shadow-accent: 0 6px 25px -6px hsl(var(--brand-dark-blue) / 0.35);
     --shadow-professional: 0 4px 20px -4px hsl(var(--professional-grey) / 0.25);
-    --shadow-card: 0 8px 30px -8px hsl(var(--primary-blue) / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(var(--brand-dark-blue) / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -64,32 +63,31 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 8%;
-    --foreground: 220 15% 95%;
-    --card: 220 25% 8%;
-    --card-foreground: 220 15% 95%;
-    --popover: 220 25% 8%;
-    --popover-foreground: 220 15% 95%;
-    --primary: 200 100% 15%;
-    --primary-foreground: 210 5% 95%;
-    --secondary: 200 85% 25%;
-    --secondary-foreground: 210 5% 95%;
-    --muted: 210 15% 25%;
-    --muted-foreground: 210 10% 70%;
-    --accent: 180 100% 20%;
-    --accent-foreground: 210 5% 95%;
+    --background: 203 77% 8%;
+    --foreground: 35 36% 95%;
+    --card: 203 77% 10%;
+    --card-foreground: 35 36% 95%;
+    --popover: 203 77% 10%;
+    --popover-foreground: 35 36% 95%;
+    --primary: 203 77% 17%;
+    --primary-foreground: 35 36% 95%;
+    --secondary: 203 50% 35%;
+    --secondary-foreground: 35 36% 95%;
+    --muted: 203 30% 25%;
+    --muted-foreground: 35 20% 70%;
+    --accent: 203 50% 35%;
+    --accent-foreground: 35 36% 95%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 5% 95%;
-    --border: 210 15% 25%;
-    --input: 210 15% 25%;
-    --ring: 180 100% 20%;
-    --primary-blue: 200 100% 15%;
-    --secondary-blue: 200 85% 25%;
-    --accent-teal: 180 100% 20%;
+    --destructive-foreground: 35 36% 95%;
+    --border: 203 30% 25%;
+    --input: 203 30% 25%;
+    --ring: 203 50% 35%;
+    --brand-dark-blue: 203 77% 17%;
+    --brand-cream: 35 36% 91%;
+    --brand-blue-light: 203 50% 35%;
     --professional-grey: 210 10% 50%;
-    --light-grey: 210 15% 85%;
-    --text-dark: 210 20% 20%;
-    --text-light: 210 5% 95%;
+    --text-dark: 203 77% 17%;
+    --text-light: 35 36% 95%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -209,7 +207,7 @@ All colors MUST be HSL.
   }
   
   .gear-rotate {
-    animation: rotateSlow 8s linear infinite;
+    animation: gearRotate 6s linear infinite;
   }
   
   .scroll-reveal {
@@ -299,6 +297,15 @@ All colors MUST be HSL.
   }
   
   @keyframes rotateSlow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes gearRotate {
     from {
       transform: rotate(0deg);
     }

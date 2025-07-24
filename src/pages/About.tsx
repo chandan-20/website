@@ -13,8 +13,10 @@ import {
   Lightbulb,
   Shield
 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
+  const scrollRef = useScrollAnimation();
   const values = [
     {
       icon: Target,
@@ -69,12 +71,12 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div ref={scrollRef} className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-professional py-20 text-white fade-in-up" style={{ background: 'var(--gradient-hero)' }}>
+      <section className="section-professional py-20 text-white" style={{ background: 'var(--gradient-hero)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-courage-orange hover:bg-courage-orange text-white px-4 py-2 slide-up">
+            <Badge className="mb-6 bg-accent text-accent-foreground px-4 py-2">
               Our Story
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 heading-industrial">
@@ -92,12 +94,12 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className="card-industrial p-8">
+            <Card className="card-industrial p-8 scroll-reveal">
               <CardHeader>
-                <div className="w-16 h-16 mb-4 bg-gradient-to-r from-blue-900 to-blue-800 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 mb-4 rounded-full flex items-center justify-center" style={{ background: 'var(--gradient-primary)' }}>
                   <Target className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl">Our Mission</CardTitle>
+                <CardTitle className="text-2xl text-primary">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed">
@@ -109,12 +111,12 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-industrial p-8">
+            <Card className="card-industrial p-8 scroll-reveal">
               <CardHeader>
-                <div className="w-16 h-16 mb-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 mb-4 rounded-full flex items-center justify-center" style={{ background: 'var(--gradient-accent)' }}>
                   <Eye className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl">Our Vision</CardTitle>
+                <CardTitle className="text-2xl text-primary">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed">
@@ -130,9 +132,9 @@ const About = () => {
       </section>
 
       {/* Company Values */}
-      <section className="py-20 section-steel">
+      <section className="py-20 section-professional">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-industrial text-primary">
               Our Core Values
             </h2>
@@ -145,12 +147,12 @@ const About = () => {
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
-                <Card key={index} className="card-industrial text-center p-6 hover:shadow-xl transition-all duration-300">
+                <Card key={index} className="card-industrial text-center p-6 hover:shadow-xl transition-all duration-300 scroll-reveal">
                   <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-900 to-blue-800 rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ background: 'var(--gradient-primary)' }}>
                       <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl">{value.title}</CardTitle>
+                    <CardTitle className="text-xl text-primary">{value.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-base">

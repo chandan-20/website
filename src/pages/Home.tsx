@@ -18,8 +18,10 @@ import {
 } from "lucide-react";
 import IndiaMap from "@/components/IndiaMap";
 import ClientShowcase from "@/components/ClientShowcase";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Home = () => {
+  const scrollRef = useScrollAnimation();
   const features = [
     {
       icon: Cog,
@@ -58,7 +60,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div ref={scrollRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div 
@@ -67,21 +69,21 @@ const Home = () => {
         ></div>
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-gradient-to-r from-confidence-blue to-courage-cyan text-white px-6 py-3 text-sm font-semibold rounded-full slide-up">
+            <Badge className="mb-6 bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold rounded-full">
               <Sparkles className="mr-2 h-4 w-4" />
               Trusted CNC Manufacturing Partner
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 heading-industrial text-foreground fade-in-up">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 heading-industrial text-foreground">
               Precision CNC Machining
-              <span className="block bg-gradient-to-r from-confidence-blue to-courage-cyan bg-clip-text text-transparent">
+              <span className="block text-primary">
                 Built on Trust & Excellence
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-muted-foreground text-industrial fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl mb-8 text-muted-foreground text-industrial">
               Engineering precision for over 23 years with cutting-edge CNC technology, 
               delivering unmatched quality and reliability across industries.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center scale-in" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="btn-professional text-lg px-8 py-6">
                 <Link to="/contact">
                   <Target className="mr-2 h-5 w-5" />
@@ -110,9 +112,9 @@ const Home = () => {
       {/* Features Section */}
       <section className="py-20 section-professional">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 fade-in-up">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-industrial text-primary">
-              Why Choose Shree Varshitha Automates?
+              Why Choose Shree Varshitha Automats?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Built on courage, determination, confidence, and unwavering trust
@@ -123,7 +125,7 @@ const Home = () => {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="card-professional text-center p-6 group fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <Card key={index} className="card-professional text-center p-6 group scroll-reveal">
                   <CardHeader>
                     <div 
                       className="w-16 h-16 mx-auto mb-4 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
@@ -148,7 +150,7 @@ const Home = () => {
       {/* Stats Section */}
       <section 
         className="py-16 text-white relative overflow-hidden"
-        style={{ background: 'var(--gradient-trust)' }}
+        style={{ background: 'var(--gradient-primary)' }}
       >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 animate-float">
@@ -161,8 +163,8 @@ const Home = () => {
         <div className="relative container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="text-4xl md:text-5xl font-bold mb-2 text-courage-cyan">
+              <div key={index} className="text-center scroll-reveal">
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-primary-foreground">
                   {stat.number}
                 </div>
                 <div className="text-lg opacity-90">{stat.label}</div>
@@ -176,12 +178,12 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="scroll-reveal">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 heading-industrial text-primary">
                 Precision Manufacturing Excellence Since 2000
               </h2>
               <p className="text-lg mb-6 text-muted-foreground">
-                Shree Varshitha Automates has been at the forefront of precision CNC machining 
+                Shree Varshitha Automats has been at the forefront of precision CNC machining 
                 for over two decades. Our commitment to quality, innovation, and customer 
                 satisfaction has made us a trusted partner across multiple industries.
               </p>
@@ -198,14 +200,14 @@ const Home = () => {
                   </div>
                 ))}
               </div>
-              <Button asChild className="btn-industrial">
+              <Button asChild className="btn-professional">
                 <Link to="/about">
                   Learn More About Us <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
-            <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-8 h-96 flex items-center justify-center">
-              <div className="text-center text-gray-500">
+            <div className="scroll-reveal rounded-lg p-8 h-96 flex items-center justify-center" style={{ background: 'var(--gradient-card)' }}>
+              <div className="text-center text-primary">
                 <Settings className="h-24 w-24 mx-auto mb-4 opacity-50" />
                 <p className="text-lg">CNC Manufacturing Facility</p>
                 <p className="text-sm">State-of-the-art Equipment</p>
@@ -216,9 +218,9 @@ const Home = () => {
       </section>
 
       {/* India Map Section */}
-      <section className="py-20 section-trust">
+      <section className="py-20 section-professional">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 fade-in-up">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-industrial text-primary">
               Our Operations Across India
             </h2>
@@ -227,7 +229,7 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto scale-in">
+          <div className="max-w-4xl mx-auto scroll-reveal">
             <IndiaMap />
           </div>
         </div>
@@ -239,7 +241,7 @@ const Home = () => {
       {/* Industries Section */}
       <section className="py-20 section-professional">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 fade-in-up">
+          <div className="text-center mb-16 scroll-reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-industrial text-primary">
               Industries We Serve
             </h2>
@@ -250,9 +252,9 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((industry, index) => (
-              <Card key={index} className="card-professional p-6 group fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={index} className="card-professional p-6 group scroll-reveal">
                 <CardHeader>
-                  <CardTitle className="text-xl text-center text-primary group-hover:text-courage-cyan transition-colors duration-300">
+                  <CardTitle className="text-xl text-center text-primary group-hover:text-secondary transition-colors duration-300">
                     {industry.name}
                   </CardTitle>
                 </CardHeader>
@@ -265,7 +267,7 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="text-center mt-12 scale-in">
+          <div className="text-center mt-12 scroll-reveal">
             <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               <Link to="/industries">
                 Explore All Industries <ArrowRight className="ml-2 h-5 w-5" />
@@ -289,14 +291,14 @@ const Home = () => {
           </div>
         </div>
         <div className="relative container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 heading-industrial fade-in-up">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 heading-industrial scroll-reveal">
             Ready to Start Your Precision Manufacturing Project?
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto scroll-reveal">
             Partner with us for engineering excellence. Get a consultation and detailed quote 
             tailored to your specific requirements.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center scale-in" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center scroll-reveal">
             <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-primary hover:bg-background">
               <Link to="/contact">
                 <Heart className="mr-2 h-5 w-5" />
