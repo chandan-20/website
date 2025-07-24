@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="section-professional" style={{ background: 'var(--gradient-trust)' }}>
+    <footer className="section-professional" style={{ background: 'var(--gradient-footer)' }}>
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -29,9 +29,9 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/about" className="text-sm opacity-90 hover:opacity-100 transition-opacity">About Us</Link></li>
               <li><Link to="/services" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Our Services</Link></li>
-              <li><Link to="/industries" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Industries</Link></li>
-              <li><Link to="/gallery" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Gallery</Link></li>
-              <li><Link to="/certifications" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Quality & Certifications</Link></li>
+              <li><Link to="/contact" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Contact Us</Link></li>
+              <li><a href="tel:+91-XXX-XXX-XXXX" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Call Now</a></li>
+              <li><a href="mailto:shreevarshithaautomats@gmail.com" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Email Us</a></li>
             </ul>
           </div>
 
@@ -53,11 +53,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 opacity-90" />
-                <span className="text-sm opacity-90">+91-XXX-XXX-XXXX</span>
+                <a href="tel:+91-XXX-XXX-XXXX" className="text-sm opacity-90 hover:opacity-100 transition-opacity">+91-XXX-XXX-XXXX</a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 opacity-90" />
-                <span className="text-sm opacity-90">shreevarshithaautomats@gmail.com</span>
+                <a href="mailto:shreevarshithaautomats@gmail.com" className="text-sm opacity-90 hover:opacity-100 transition-opacity">shreevarshithaautomats@gmail.com</a>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 opacity-90 mt-0.5" />

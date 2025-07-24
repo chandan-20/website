@@ -28,30 +28,30 @@ All colors MUST be HSL.
     --input: 232 12% 88%;
     --ring: 232 67% 28%;
     
-    /* Professional Color Palette - Courage, Determination, Confidence, Trust */
-    --confidence-blue: 232 67% 28%;      /* Deep Professional Blue */
-    --trust-navy: 232 85% 12%;           /* Deep Navy - Ultimate Trust */
-    --courage-orange: 14 85% 55%;        /* Bold Orange - Courage & Determination */
-    --determination-steel: 232 12% 55%;  /* Steel Grey - Determination */
-    --professional-silver: 232 8% 82%;   /* Light Silver */
-    --success-emerald: 142 76% 36%;      /* Success Green */
-    --precision-gold: 45 95% 65%;        /* Gold Accent for Premium */
+    /* Professional Color Palette - Based on SV Logo Design */
+    --primary-blue: 200 100% 15%;        /* Deep Professional Blue from logo */
+    --secondary-blue: 200 85% 25%;       /* Slightly lighter blue */
+    --accent-teal: 180 100% 20%;         /* Teal accent from logo */
+    --professional-grey: 210 10% 50%;    /* Professional grey */
+    --light-grey: 210 15% 85%;           /* Light grey background */
+    --text-dark: 210 20% 20%;            /* Dark text */
+    --text-light: 210 5% 95%;            /* Light text */
     --radius: 0.5rem;
     
-    /* Enhanced Professional gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--confidence-blue)), hsl(var(--courage-orange)));
-    --gradient-trust: linear-gradient(145deg, hsl(var(--trust-navy)), hsl(var(--confidence-blue)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--trust-navy)), hsl(var(--courage-orange)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--professional-silver)));
-    --gradient-premium: linear-gradient(135deg, hsl(var(--precision-gold)), hsl(var(--courage-orange)));
-    --gradient-steel: linear-gradient(145deg, hsl(var(--determination-steel)), hsl(var(--professional-silver)));
+    /* Professional gradients based on SV logo colors */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-blue)), hsl(var(--accent-teal)));
+    --gradient-header: linear-gradient(145deg, hsl(var(--primary-blue)), hsl(var(--secondary-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-blue)), hsl(var(--accent-teal)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--light-grey)));
+    --gradient-footer: linear-gradient(145deg, hsl(var(--primary-blue)), hsl(var(--secondary-blue)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-teal)), hsl(var(--secondary-blue)));
     
-    /* Enhanced Professional shadows */
-    --shadow-confidence: 0 12px 35px -12px hsl(var(--confidence-blue) / 0.35);
-    --shadow-trust: 0 10px 30px -10px hsl(var(--trust-navy) / 0.4);
-    --shadow-courage: 0 6px 25px -6px hsl(var(--courage-orange) / 0.35);
-    --shadow-professional: 0 4px 20px -4px hsl(var(--determination-steel) / 0.25);
-    --shadow-premium: 0 8px 30px -8px hsl(var(--precision-gold) / 0.3);
+    /* Professional shadows based on new color scheme */
+    --shadow-primary: 0 12px 35px -12px hsl(var(--primary-blue) / 0.35);
+    --shadow-secondary: 0 10px 30px -10px hsl(var(--secondary-blue) / 0.4);
+    --shadow-accent: 0 6px 25px -6px hsl(var(--accent-teal) / 0.35);
+    --shadow-professional: 0 4px 20px -4px hsl(var(--professional-grey) / 0.25);
+    --shadow-card: 0 8px 30px -8px hsl(var(--primary-blue) / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -70,26 +70,26 @@ All colors MUST be HSL.
     --card-foreground: 220 15% 95%;
     --popover: 220 25% 8%;
     --popover-foreground: 220 15% 95%;
-    --primary: 14 85% 55%;
-    --primary-foreground: 232 25% 8%;
-    --secondary: 232 20% 15%;
-    --secondary-foreground: 232 15% 95%;
-    --muted: 232 20% 15%;
-    --muted-foreground: 232 10% 70%;
-    --accent: 232 67% 35%;
-    --accent-foreground: 232 15% 95%;
+    --primary: 200 100% 15%;
+    --primary-foreground: 210 5% 95%;
+    --secondary: 200 85% 25%;
+    --secondary-foreground: 210 5% 95%;
+    --muted: 210 15% 25%;
+    --muted-foreground: 210 10% 70%;
+    --accent: 180 100% 20%;
+    --accent-foreground: 210 5% 95%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 232 15% 95%;
-    --border: 232 20% 15%;
-    --input: 232 20% 15%;
-    --ring: 14 85% 55%;
-    --confidence-blue: 232 67% 35%;
-    --trust-navy: 232 85% 18%;
-    --courage-orange: 14 85% 55%;
-    --determination-steel: 232 15% 45%;
-    --professional-silver: 232 12% 25%;
-    --success-emerald: 142 76% 40%;
-    --precision-gold: 45 95% 70%;
+    --destructive-foreground: 210 5% 95%;
+    --border: 210 15% 25%;
+    --input: 210 15% 25%;
+    --ring: 180 100% 20%;
+    --primary-blue: 200 100% 15%;
+    --secondary-blue: 200 85% 25%;
+    --accent-teal: 180 100% 20%;
+    --professional-grey: 210 10% 50%;
+    --light-grey: 210 15% 85%;
+    --text-dark: 210 20% 20%;
+    --text-light: 210 5% 95%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -206,6 +206,21 @@ All colors MUST be HSL.
   
   .rotate-slow {
     animation: rotateSlow 20s linear infinite;
+  }
+  
+  .gear-rotate {
+    animation: rotateSlow 8s linear infinite;
+  }
+  
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   
   .glow {

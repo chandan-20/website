@@ -22,15 +22,15 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b backdrop-blur" style={{ background: 'var(--gradient-header)' }}>
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <Logo size="md" className="transition-transform duration-300 group-hover:scale-110" />
             <div className="flex flex-col">
-              <span className="font-bold text-lg text-primary leading-tight">Shree Varshitha</span>
-              <span className="text-xs text-muted-foreground font-medium">Automats</span>
+              <span className="font-bold text-lg leading-tight" style={{ color: 'hsl(var(--text-light))' }}>Shree Varshitha</span>
+              <span className="text-xs font-medium" style={{ color: 'hsl(var(--text-light))' }}>Automats</span>
             </div>
           </Link>
 
@@ -40,11 +40,15 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors ${
                   isActive(item.href)
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-muted-foreground"
+                    ? "border-b-2" 
+                    : ""
                 }`}
+                style={{ 
+                  color: isActive(item.href) ? 'hsl(var(--accent-teal))' : 'hsl(var(--text-light))',
+                  borderColor: isActive(item.href) ? 'hsl(var(--accent-teal))' : 'transparent'
+                }}
               >
                 {item.label}
               </Link>
