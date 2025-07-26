@@ -8,49 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 35 36% 91%;
-    --foreground: 203 77% 17%;
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
-    --card-foreground: 203 77% 17%;
+    --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
-    --popover-foreground: 203 77% 17%;
-    --primary: 203 77% 17%;
-    --primary-foreground: 35 36% 95%;
-    --secondary: 203 50% 35%;
-    --secondary-foreground: 35 36% 95%;
-    --muted: 35 20% 85%;
-    --muted-foreground: 203 30% 45%;
-    --accent: 203 50% 35%;
-    --accent-foreground: 35 36% 95%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 35 36% 95%;
-    --border: 203 30% 88%;
-    --input: 203 30% 88%;
-    --ring: 203 77% 17%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
     
-    /* User Specified Colors - Dark Blue & Beige/Cream */
-    --brand-dark-blue: 203 77% 17%;      /* #0A2D4D - Primary brand color */
-    --brand-cream: 35 36% 91%;           /* #F1E9DF - Background color */
-    --brand-blue-light: 203 50% 35%;     /* Lighter variant of dark blue */
-    --professional-grey: 210 10% 50%;    /* Professional grey */
-    --text-dark: 203 77% 17%;            /* Dark text using brand blue */
-    --text-light: 35 36% 95%;            /* Light text */
-    --radius: 0.5rem;
+    /* Modern color palette */
+    --brand-purple: 262 83% 58%;
+    --brand-gold: 43 96% 56%;
+    --neutral-50: 220 14% 96%;
+    --neutral-100: 220 13% 91%;
+    --neutral-900: 224 71% 4%;
     
-    /* Brand gradients using specified colors */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-dark-blue)), hsl(var(--brand-blue-light)));
-    --gradient-header: linear-gradient(145deg, hsl(var(--brand-dark-blue)), hsl(var(--brand-blue-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-dark-blue)), hsl(var(--brand-blue-light)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--brand-cream)), hsl(var(--background)));
-    --gradient-footer: linear-gradient(145deg, hsl(var(--brand-dark-blue)), hsl(var(--brand-blue-light)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--brand-blue-light)), hsl(var(--brand-dark-blue)));
+    /* Modern gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(262, 83%, 68%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(224, 71%, 4%) 0%, hsl(224, 71%, 14%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(220, 14%, 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(220, 14%, 99%) 100%);
     
-    /* Professional shadows using brand colors */
-    --shadow-primary: 0 12px 35px -12px hsl(var(--brand-dark-blue) / 0.35);
-    --shadow-secondary: 0 10px 30px -10px hsl(var(--brand-blue-light) / 0.4);
-    --shadow-accent: 0 6px 25px -6px hsl(var(--brand-dark-blue) / 0.35);
-    --shadow-professional: 0 4px 20px -4px hsl(var(--professional-grey) / 0.25);
-    --shadow-card: 0 8px 30px -8px hsl(var(--brand-dark-blue) / 0.15);
+    /* Modern shadows */
+    --shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-elegant: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-premium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 0 1px rgba(262, 83%, 58%, 0.05), 0 4px 6px -1px rgba(262, 83%, 58%, 0.1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -107,70 +103,66 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
   
-  /* Industrial typography */
-  .heading-industrial {
-    @apply font-bold tracking-tight;
-    font-family: system-ui, -apple-system, sans-serif;
+  /* Modern typography */
+  .heading-modern {
+    @apply text-4xl md:text-5xl font-bold text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
-  
-  .text-industrial {
-    @apply leading-relaxed;
-    font-family: system-ui, -apple-system, sans-serif;
+
+  .text-modern {
+    @apply text-lg text-muted-foreground leading-relaxed;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .heading-elegant {
+    @apply text-2xl md:text-3xl font-semibold text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.015em;
   }
 }
 
 @layer components {
-  /* Professional button variants */
-  .btn-professional {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
-    background: var(--gradient-primary);
-    @apply text-white hover:scale-105 hover:shadow-2xl transform;
-    box-shadow: var(--shadow-confidence);
+  /* Modern button variants */
+  .btn-modern {
+    @apply inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-semibold text-primary-foreground bg-primary rounded-xl transition-all duration-300;
+    box-shadow: var(--shadow-glow);
   }
-  
-  .btn-confidence {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    background: var(--gradient-trust);
-    @apply text-white hover:scale-105 hover:shadow-2xl transform;
-    box-shadow: var(--shadow-trust);
-  }
-  
-  .btn-premium {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    background: var(--gradient-premium);
-    @apply text-white hover:scale-105 hover:shadow-2xl transform hover:rotate-1;
+
+  .btn-modern:hover {
+    transform: translateY(-1px);
     box-shadow: var(--shadow-premium);
   }
-  
-  /* Professional card styles */
-  .card-professional {
-    @apply rounded-xl border bg-card text-card-foreground shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] transform;
-    background: var(--gradient-card);
-    box-shadow: var(--shadow-professional);
+
+  .btn-outline-modern {
+    @apply inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-semibold border-2 border-primary text-primary bg-transparent rounded-xl transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
   }
   
-  .card-industrial {
-    @apply rounded-xl border bg-card text-card-foreground shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 transform;
+  /* Modern card styles */
+  .card-modern {
+    @apply bg-card border-0 rounded-2xl p-8;
     background: var(--gradient-card);
-    box-shadow: var(--shadow-professional);
+    box-shadow: var(--shadow-elegant);
+    transition: all 0.3s ease;
   }
-  
-  .card-premium {
-    @apply rounded-xl border-2 bg-card text-card-foreground shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-2 transform;
-    background: var(--gradient-steel);
+
+  .card-modern:hover {
+    transform: translateY(-4px);
     box-shadow: var(--shadow-premium);
-    border-color: hsl(var(--precision-gold) / 0.3);
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/80 border border-white/20;
   }
   
-  /* Professional section backgrounds */
-  .section-professional {
-    @apply relative overflow-hidden;
-    background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+  /* Modern section styles */
+  .section-modern {
+    @apply py-20 px-4 relative;
   }
-  
-  .section-trust {
-    @apply relative;
-    background: linear-gradient(145deg, hsl(var(--professional-silver) / 0.1), hsl(var(--determination-steel) / 0.1));
+
+  .container-modern {
+    @apply max-w-7xl mx-auto relative z-10;
   }
   
   /* Animation utilities */
