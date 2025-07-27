@@ -63,33 +63,24 @@ const Home = () => {
     <div ref={scrollRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
+        {/* Video Background - Using iframe for reliable video playback */}
         <div className="absolute inset-0 overflow-hidden">
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-            onError={(e) => {
-              // Fallback to gradient background if video fails
-              e.currentTarget.style.display = 'none';
-              const fallback = e.currentTarget.parentElement?.querySelector('.video-fallback') as HTMLElement;
-              if (fallback) fallback.style.display = 'block';
+          <iframe
+            src="https://www.youtube.com/embed/-9htuGLegbI?autoplay=1&mute=1&loop=1&playlist=-9htuGLegbI&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&start=30&end=90"
+            className="absolute inset-0 w-full h-full scale-150 origin-center pointer-events-none"
+            style={{ 
+              border: 'none',
+              transform: 'scale(1.5) translateY(-10%)'
             }}
-          >
-            <source src="https://cdn.pixabay.com/video/2022/04/26/116479-702724209_large.mp4" type="video/mp4" />
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-working-in-a-mechanical-workshop-4784-large.mp4" type="video/mp4" />
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-industrial-worker-operating-a-machine-4783-large.mp4" type="video/mp4" />
-          </video>
-          {/* Fallback gradient background */}
-          <div className="video-fallback absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" style={{ display: 'none' }}>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-          </div>
+            allow="autoplay; encrypted-media"
+            onError={() => {
+              console.log('Video iframe failed to load');
+            }}
+          />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/60 z-10"></div>
           {/* Gradient overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/50 z-10"></div>
         </div>
         
         <div className="container-modern">
