@@ -63,8 +63,23 @@ const Home = () => {
     <div ref={scrollRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/10 to-background"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+        {/* Video Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-working-on-a-lathe-in-a-workshop-43651-large.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Gradient overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/30"></div>
+        </div>
         
         <div className="container-modern">
           <div className="text-center max-w-5xl mx-auto">
