@@ -63,52 +63,52 @@ const Home = () => {
     <div ref={scrollRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video Background - Using iframe for reliable video playback */}
+        {/* Video Background - Professional CNC Manufacturing */}
         <div className="absolute inset-0 overflow-hidden">
           <iframe
-            src="https://www.youtube.com/embed/-9htuGLegbI?autoplay=1&mute=1&loop=1&playlist=-9htuGLegbI&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&start=30&end=90"
-            className="absolute inset-0 w-full h-full scale-150 origin-center pointer-events-none"
+            src="https://www.youtube.com/embed/watch?v=RJ7I73MPMSU?autoplay=1&mute=1&loop=1&playlist=RJ7I73MPMSU&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&t=10"
+            className="absolute inset-0 w-full h-full scale-110 origin-center pointer-events-none opacity-60"
             style={{ 
               border: 'none',
-              transform: 'scale(1.5) translateY(-10%)'
+              filter: 'brightness(0.4) contrast(1.1)'
             }}
             allow="autoplay; encrypted-media"
             onError={() => {
-              console.log('Video iframe failed to load');
+              console.log('Video iframe failed to load, using fallback');
             }}
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
-          {/* Gradient overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/50 z-10"></div>
+          {/* Subtle overlay to ensure text visibility while keeping video visible */}
+          <div className="absolute inset-0 bg-black/30 z-10"></div>
+          {/* Gradient overlay for enhanced text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40 z-10"></div>
         </div>
         
-        <div className="container-modern">
+        <div className="container-modern relative z-20">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-8 border border-primary/20">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              Trusted CNC Manufacturing Partner Since 2000
+            <div className="inline-flex items-center gap-2 bg-white/20 text-white font-medium px-4 py-2 rounded-full text-sm mb-8 border border-white/30 backdrop-blur-sm">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              Trusted CNC Manufacturing Partner Since 2001
             </div>
             
-            <h1 className="heading-modern mb-6 bg-gradient-to-r from-foreground via-foreground/80 to-foreground bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
               Precision CNC Manufacturing
-              <span className="block text-primary">Solutions</span>
+              <span className="block text-white/90">Solutions</span>
             </h1>
             
-            <p className="text-modern mb-12 max-w-3xl mx-auto text-xl">
-              Engineering precision for over 23 years with cutting-edge CNC technology, 
+            <p className="text-white/90 mb-12 max-w-3xl mx-auto text-xl leading-relaxed">
+              Engineering precision for over 23 years with cutting-edge TRAUB and CNC technology, 
               delivering unmatched quality and reliability across industries.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="btn-modern group">
+                <button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg group">
                   <Target className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                   Request a Quote
                 </button>
               </Link>
               <Link to="/services">
-                <button className="btn-outline-modern group">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 backdrop-blur-sm group">
                   View Our Services
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
@@ -117,9 +117,9 @@ const Home = () => {
           </div>
         </div>
         
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
           <div className="animate-bounce">
-            <ArrowRight className="h-6 w-6 text-muted-foreground/60 rotate-90" />
+            <ArrowRight className="h-6 w-6 text-white/60 rotate-90" />
           </div>
         </div>
       </section>
