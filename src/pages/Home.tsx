@@ -71,14 +71,24 @@ const Home = () => {
             loop 
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => {
+              // Fallback to gradient background if video fails
+              e.currentTarget.style.display = 'none';
+              const fallback = e.currentTarget.parentElement?.querySelector('.video-fallback') as HTMLElement;
+              if (fallback) fallback.style.display = 'block';
+            }}
           >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-working-on-a-lathe-in-a-workshop-43651-large.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
           </video>
+          {/* Fallback gradient background */}
+          <div className="video-fallback absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" style={{ display: 'none' }}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+          </div>
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
           {/* Gradient overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40"></div>
         </div>
         
         <div className="container-modern">
