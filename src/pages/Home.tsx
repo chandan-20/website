@@ -78,8 +78,9 @@ const Home = () => {
               if (fallback) fallback.style.display = 'block';
             }}
           >
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            <source src="https://cdn.pixabay.com/video/2022/04/26/116479-702724209_large.mp4" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-working-in-a-mechanical-workshop-4784-large.mp4" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-industrial-worker-operating-a-machine-4783-large.mp4" type="video/mp4" />
           </video>
           {/* Fallback gradient background */}
           <div className="video-fallback absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" style={{ display: 'none' }}>
