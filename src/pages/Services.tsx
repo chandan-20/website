@@ -14,7 +14,8 @@ import {
   Wrench,
   Shield,
   Clock,
-  Award
+  Award,
+  Layers
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -92,6 +93,18 @@ const Services = () => {
         "Certification and documentation"
       ],
       applications: "Critical components, aerospace, medical"
+    },
+    {
+      icon: Layers,
+      title: "TRAUB Manufacturing",
+      description: "Specialized TRAUB component manufacturing with precision Swiss-type machining",
+      features: [
+        "Swiss-type automatic lathes",
+        "Multi-spindle capabilities",
+        "Complex part geometries",
+        "High-precision sliding headstock"
+      ],
+      applications: "Medical devices, electronics, automotive precision parts"
     }
   ];
 
@@ -187,7 +200,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Grid - Weave-style Cards */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 scroll-reveal">
@@ -203,34 +216,41 @@ const Services = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="card-industrial hover:shadow-xl transition-all duration-300 scroll-reveal">
-                  <CardHeader>
-                    <div className="w-16 h-16 mb-4 rounded-full flex items-center justify-center" style={{ background: 'var(--gradient-primary)' }}>
-                      <Icon className="h-8 w-8 text-white" />
-                    </div>
-                    <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
-                    <CardDescription className="text-base">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">Key Features:</h4>
-                      <ul className="space-y-1">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start space-x-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                            <span className="text-muted-foreground">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">Applications:</h4>
-                      <p className="text-sm text-muted-foreground">{service.applications}</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div key={index} className="group cursor-pointer scroll-reveal">
+                  <Card className="h-full border-2 border-gray-100 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-gray-50/50">
+                    <CardHeader className="pb-4">
+                      <div className="w-16 h-16 mb-6 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 group-hover:from-primary/20 group-hover:to-primary/30 transition-all duration-300 group-hover:scale-110">
+                        <Icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <CardTitle className="text-xl text-primary group-hover:text-primary/80 transition-colors duration-300">{service.title}</CardTitle>
+                      <CardDescription className="text-base text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                        {service.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div className="space-y-3">
+                        <h4 className="font-semibold text-primary text-sm uppercase tracking-wide">Key Features</h4>
+                        <ul className="space-y-2">
+                          {service.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-start space-x-3 text-sm">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                              <span className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="pt-4 border-t border-gray-100">
+                        <h4 className="font-semibold text-primary text-sm uppercase tracking-wide mb-2">Applications</h4>
+                        <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">{service.applications}</p>
+                      </div>
+                      <div className="pt-2">
+                        <div className="flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium">
+                          Learn more <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               );
             })}
           </div>

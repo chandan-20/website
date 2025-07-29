@@ -19,6 +19,7 @@ import {
 import IndiaMap from "@/components/IndiaMap";
 import ClientShowcase from "@/components/ClientShowcase";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import cncHeroImage from "@/assets/cnc-manufacturing-hero.jpg";
 
 const Home = () => {
   const scrollRef = useScrollAnimation();
@@ -63,52 +64,45 @@ const Home = () => {
     <div ref={scrollRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video Background - Using iframe for reliable video playback */}
+        {/* Professional CNC Image Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <iframe
-            src="https://www.youtube.com/embed/-9htuGLegbI?autoplay=1&mute=1&loop=1&playlist=-9htuGLegbI&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&start=30&end=90"
-            className="absolute inset-0 w-full h-full scale-150 origin-center pointer-events-none"
-            style={{ 
-              border: 'none',
-              transform: 'scale(1.5) translateY(-10%)'
-            }}
-            allow="autoplay; encrypted-media"
-            onError={() => {
-              console.log('Video iframe failed to load');
-            }}
+          <img 
+            src={cncHeroImage} 
+            alt="Professional CNC Manufacturing" 
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
+          {/* Dimmed overlay for text readability */}
+          <div className="absolute inset-0 bg-black/50 z-10"></div>
           {/* Gradient overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/50 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40 z-10"></div>
         </div>
         
-        <div className="container-modern">
+        <div className="container-modern relative z-20">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-8 border border-primary/20">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              Trusted CNC Manufacturing Partner Since 2000
+            <div className="inline-flex items-center gap-2 bg-white/20 text-white font-medium px-4 py-2 rounded-full text-sm mb-8 border border-white/20 backdrop-blur-sm">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              Trusted CNC Manufacturing Partner Since 2001
             </div>
             
-            <h1 className="heading-modern mb-6 bg-gradient-to-r from-foreground via-foreground/80 to-foreground bg-clip-text text-transparent">
-              Precision CNC Manufacturing
-              <span className="block text-primary">Solutions</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+              Precision CNC & TRAUB Manufacturing
+              <span className="block text-white">Solutions</span>
             </h1>
             
-            <p className="text-modern mb-12 max-w-3xl mx-auto text-xl">
-              Engineering precision for over 23 years with cutting-edge CNC technology, 
+            <p className="text-xl mb-12 max-w-3xl mx-auto text-white/90">
+              Engineering precision for over 23 years with cutting-edge CNC and TRAUB technology, 
               delivering unmatched quality and reliability across industries.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="btn-modern group">
-                  <Target className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <button className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
+                  <Target className="w-5 h-5" />
                   Request a Quote
                 </button>
               </Link>
               <Link to="/services">
-                <button className="btn-outline-modern group">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 backdrop-blur-sm">
                   View Our Services
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
@@ -199,15 +193,16 @@ const Home = () => {
               
               <div className="space-y-6">
                 <p className="text-modern leading-relaxed">
-                  Shree Varshitha Automats has been at the forefront of precision CNC machining 
-                  for over two decades. Our commitment to quality, innovation, and customer 
-                  satisfaction has made us a trusted partner across multiple industries.
+                  Shree Varshitha Automats has been at the forefront of precision CNC and TRAUB machining 
+                  for over two decades. We manufacture both high-precision CNC components and specialized TRAUB parts. 
+                  Our commitment to quality, innovation, and customer satisfaction has made us a trusted partner across multiple industries.
                 </p>
               </div>
               
               <div className="space-y-4">
                 {[
                   "Advanced CNC milling and turning capabilities",
+                  "Specialized TRAUB component manufacturing",
                   "ISO certified quality management systems",
                   "Expert engineering and design support",
                   "On-time delivery with competitive pricing"
