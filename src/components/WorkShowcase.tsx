@@ -31,18 +31,6 @@ const WorkShowcase = () => {
   return (
     <section className="section-modern">
       <div className="container-modern">
-        <div className="text-center mb-20 scroll-reveal">
-          <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
-            Our Work
-          </div>
-          <h2 className="heading-elegant mb-6 text-black">
-            Precision in Action
-          </h2>
-          <p className="text-modern max-w-2xl mx-auto text-black">
-            See our manufacturing excellence through images of our work and factory operations
-          </p>
-        </div>
-        
         <div className="scroll-reveal">
           <CardStack items={workImages} />
         </div>

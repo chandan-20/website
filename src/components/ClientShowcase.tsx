@@ -1,6 +1,11 @@
 import React from "react";
+import { useCountUpAnimation } from "@/hooks/useCountUpAnimation";
 
 const ClientShowcase = () => {
+  const yearsAnimation = useCountUpAnimation(23);
+  const projectsAnimation = useCountUpAnimation(5000);
+  const clientsAnimation = useCountUpAnimation(150);
+  const qualityAnimation = useCountUpAnimation(99.9);
   const clients = [
     { name: "Tata Motors", logo: "TM" },
     { name: "Mahindra", logo: "MH" },
@@ -19,11 +24,6 @@ const ClientShowcase = () => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-muted/50 to-background py-12">
       <div className="relative">
-        <h3 className="text-center text-lg font-semibold mb-8 text-muted-foreground">
-          Trusted by Industry Leaders
-        </h3>
-        
-        {/* Scrolling client logos */}
         <div className="flex space-x-12 client-slide">
           {[...clients, ...clients, ...clients].map((client, index) => (
             <div 
@@ -49,20 +49,20 @@ const ClientShowcase = () => {
       
       {/* Statistics */}
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto px-4">
-        <div className="text-center fade-in-up">
-          <div className="text-3xl font-bold text-primary mb-2">150+</div>
+        <div className="text-center fade-in-up" ref={clientsAnimation.ref}>
+          <div className="text-3xl font-bold text-primary mb-2">{clientsAnimation.count}+</div>
           <div className="text-sm text-muted-foreground">Happy Clients</div>
         </div>
-        <div className="text-center fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <div className="text-3xl font-bold text-courage-cyan mb-2">5000+</div>
+        <div className="text-center fade-in-up" style={{ animationDelay: '0.1s' }} ref={projectsAnimation.ref}>
+          <div className="text-3xl font-bold text-courage-cyan mb-2">{projectsAnimation.count}+</div>
           <div className="text-sm text-muted-foreground">Projects Completed</div>
         </div>
-        <div className="text-center fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <div className="text-3xl font-bold text-success-emerald mb-2">99.9%</div>
+        <div className="text-center fade-in-up" style={{ animationDelay: '0.2s' }} ref={qualityAnimation.ref}>
+          <div className="text-3xl font-bold text-success-emerald mb-2">{qualityAnimation.count}%</div>
           <div className="text-sm text-muted-foreground">Quality Rate</div>
         </div>
-        <div className="text-center fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="text-3xl font-bold text-primary mb-2">23+</div>
+        <div className="text-center fade-in-up" style={{ animationDelay: '0.3s' }} ref={yearsAnimation.ref}>
+          <div className="text-3xl font-bold text-primary mb-2">{yearsAnimation.count}+</div>
           <div className="text-sm text-muted-foreground">Years Experience</div>
         </div>
       </div>
