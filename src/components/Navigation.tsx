@@ -10,14 +10,20 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
-    { href: "/industries", label: "Industries" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/certifications", label: "Quality" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", label: "Home", section: null },
+    { href: "#about", label: "About Us", section: "about" },
+    { href: "#services", label: "Services", section: "services" },
+    { href: "#industries", label: "Industries", section: "industries" },
+    { href: "#contact", label: "Contact", section: "contact" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent, item: any) => {
+    if (item.section) {
+      e.preventDefault();
+      const element = document.getElementById(item.section);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -37,21 +43,23 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "border-b-2" 
-                    : ""
-                }`}
-                style={{ 
-                  color: isActive(item.href) ? 'hsl(var(--accent-teal))' : 'hsl(var(--text-light))',
-                  borderColor: isActive(item.href) ? 'hsl(var(--accent-teal))' : 'transparent'
-                }}
-              >
-                {item.label}
-              </Link>
+              item.section ? (
+                <button
+                  key={item.href}
+                  onClick={(e) => handleNavClick(e, item)}
+                  className="text-sm font-medium transition-colors text-black hover:text-primary"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-sm font-medium transition-colors text-black hover:text-primary"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
 
@@ -84,16 +92,27 @@ const Navigation = () => {
                 </div>
                 
                 {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-lg font-medium transition-colors hover:text-primary ${
-                      isActive(item.href) ? "text-primary" : "text-foreground"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                  item.section ? (
+                    <button
+                      key={item.href}
+                      onClick={(e) => {
+                        handleNavClick(e, item);
+                        setIsOpen(false);
+                      }}
+                      className="text-lg font-medium transition-colors hover:text-primary text-black text-left"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-lg font-medium transition-colors hover:text-primary text-black"
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
                 
                 <div className="flex flex-col space-y-3 pt-6 border-t">

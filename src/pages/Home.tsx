@@ -79,18 +79,21 @@ const Home = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link to="/contact">
-                <Button className="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
-                  <Target className="w-5 h-5" />
-                  Request a Quote
-                </Button>
-              </Link>
-              <Link to="/services">
-                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3">
-                  View Our Services
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-              </Link>
+              <Button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg"
+              >
+                <Target className="w-5 h-5" />
+                Request a Quote
+              </Button>
+              <Button 
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                variant="outline" 
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3"
+              >
+                View Our Services
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
             </div>
           </div>
         </div>
@@ -103,7 +106,7 @@ const Home = () => {
       </section>
 
       {/* About Section - Moved to first position */}
-      <section className="section-modern">
+      <section id="about" className="section-modern">
         <div className="container-modern">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="scroll-reveal space-y-8">
@@ -134,12 +137,10 @@ const Home = () => {
                   </div>)}
               </div>
               
-              <Link to="/about">
-                <button className="btn-modern group">
-                  Learn More About Us
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-              </Link>
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="btn-modern group">
+                Learn More About Us
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
             </div>
             
             <div className="scroll-reveal">
@@ -147,6 +148,166 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="CNC Manufacturing Facility" className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section - Moved up after About */}
+      <section id="services" className="section-modern">
+        <div className="container-modern">
+          <div className="text-center mb-20 scroll-reveal">
+            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
+              Our Services
+            </div>
+            <h2 className="heading-elegant mb-6">Precision CNC Machining Services</h2>
+            <p className="text-modern max-w-2xl mx-auto">
+              Advanced manufacturing capabilities designed to meet your precise specifications
+            </p>
+          </div>
+          
+          <div className="relative max-w-4xl mx-auto">
+            <div className="space-y-8">
+              <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100 hover:border-primary/20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                        <Cog className="h-8 w-8 text-primary" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-semibold mb-4 text-black group-hover:text-primary transition-colors duration-300">
+                        CNC Milling
+                      </h3>
+                      <p className="text-black/70 mb-6 leading-relaxed text-lg">
+                        High-precision 3, 4, and 5-axis CNC milling for complex geometries and tight tolerances
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <ul className="space-y-3 text-black/60">
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            3-axis to 5-axis machining capabilities
+                          </li>
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Tolerance up to ±0.001mm
+                          </li>
+                        </ul>
+                        <ul className="space-y-3 text-black/60">
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Materials: Aluminum, Steel, Stainless Steel, Titanium
+                          </li>
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Complex geometries and intricate designs
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <p className="text-sm font-medium text-black/80 mb-2">Applications:</p>
+                        <p className="text-sm text-black/60">Aerospace components, automotive parts, medical devices</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100 hover:border-primary/20 relative overflow-hidden transform translate-x-8">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                        <RotateCcw className="h-8 w-8 text-primary" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-semibold mb-4 text-black group-hover:text-primary transition-colors duration-300">
+                        CNC Turning
+                      </h3>
+                      <p className="text-black/70 mb-6 leading-relaxed text-lg">
+                        Precision turning operations for cylindrical components with superior surface finish
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <ul className="space-y-3 text-black/60">
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Multi-spindle turning centers
+                          </li>
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Live tooling capabilities
+                          </li>
+                        </ul>
+                        <ul className="space-y-3 text-black/60">
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Diameter range: 0.5mm to 500mm
+                          </li>
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Surface finish Ra 0.1μm
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <p className="text-sm font-medium text-black/80 mb-2">Applications:</p>
+                        <p className="text-sm text-black/60">Shafts, pins, fasteners, hydraulic components</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100 hover:border-primary/20 relative overflow-hidden transform translate-x-16">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                        <Layers className="h-8 w-8 text-primary" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-semibold mb-4 text-black group-hover:text-primary transition-colors duration-300">
+                        TRAUB Manufacturing
+                      </h3>
+                      <p className="text-black/70 mb-6 leading-relaxed text-lg">
+                        Specialized TRAUB component manufacturing with precision Swiss-type machining
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <ul className="space-y-3 text-black/60">
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Swiss-type automatic lathes
+                          </li>
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Multi-spindle capabilities
+                          </li>
+                        </ul>
+                        <ul className="space-y-3 text-black/60">
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            High-volume production
+                          </li>
+                          <li className="flex items-center gap-3">
+                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                            Micro-machining capabilities
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <p className="text-sm font-medium text-black/80 mb-2">Applications:</p>
+                        <p className="text-sm text-black/60">Precision screws, connectors, electronic components</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -186,7 +347,7 @@ const Home = () => {
       <ClientShowcase />
 
       {/* Industries Section */}
-      <section className="section-modern">
+      <section id="industries" className="section-modern">
         <div className="container-modern">
           <div className="text-center mb-20 scroll-reveal">
             <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
@@ -200,198 +361,20 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {industries.map((industry, index) => <div key={index} className="card-modern text-center group cursor-pointer scroll-reveal">
-                <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-4 text-black group-hover:text-primary transition-colors duration-300">
                   {industry.name}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-black/70">
                   {industry.description}
                 </p>
               </div>)}
           </div>
-          
-          <div className="text-center mt-16 scroll-reveal">
-            <Link to="/industries">
-              <button className="btn-outline-modern group">
-                Explore All Industries
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="section-modern">
-        <div className="container-modern">
-          <div className="text-center mb-20 scroll-reveal">
-            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
-              Our Services
-            </div>
-            <h2 className="heading-elegant mb-6">Precision CNC Machining Services</h2>
-            <p className="text-modern max-w-2xl mx-auto">
-              Advanced manufacturing capabilities designed to meet your precise specifications
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
-              <div className="mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Cog className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
-                CNC Milling
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                High-precision 3, 4, and 5-axis CNC milling for complex geometries and tight tolerances
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  3-axis to 5-axis machining capabilities
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Tolerance up to ±0.001mm
-                </li>
-              </ul>
-            </div>
-
-            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
-              <div className="mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <RotateCcw className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
-                CNC Turning
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Precision turning operations for cylindrical components with superior surface finish
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Multi-spindle turning centers
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Live tooling capabilities
-                </li>
-              </ul>
-            </div>
-
-            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
-              <div className="mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Zap className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
-                Rapid Prototyping
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Fast turnaround prototype development for design validation and testing
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Quick quote and production
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Single piece to small batch
-                </li>
-              </ul>
-            </div>
-
-            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
-              <div className="mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Factory className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
-                High-Volume Production
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Scalable manufacturing solutions for large quantity requirements
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Automated production lines
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Consistent quality control
-                </li>
-              </ul>
-            </div>
-
-            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
-              <div className="mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Settings className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
-                Custom Tooling
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Specialized tooling and fixture design for unique manufacturing requirements
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Custom jig and fixture design
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Tooling optimization
-                </li>
-              </ul>
-            </div>
-
-            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
-              <div className="mb-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Layers className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
-                TRAUB Manufacturing
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Specialized TRAUB component manufacturing with precision Swiss-type machining
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Swiss-type automatic lathes
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-primary" />
-                  Multi-spindle capabilities
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="text-center mt-16 scroll-reveal">
-            <Link to="/services">
-              <button className="btn-outline-modern group">
-                View All Services
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Contact CTA Section */}
-      <section className="py-24 px-4 relative overflow-hidden">
+      <section id="contact" className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-1/4 animate-float">
@@ -406,15 +389,18 @@ const Home = () => {
         
         <div className="container-modern text-center relative">
           <div className="max-w-4xl mx-auto">
-            
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Start Your Project?
+            </h2>
+            <p className="text-xl text-white/90 mb-12">
+              Get a quote today and experience precision manufacturing excellence
+            </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center scroll-reveal">
-              <Link to="/contact">
-                
-              </Link>
-              <Link to="/services">
-                
-              </Link>
+              <button onClick={() => window.location.href = 'mailto:info@svaautomats.com'} className="bg-white text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg mx-auto">
+                <Target className="w-5 h-5" />
+                Request a Quote
+              </button>
             </div>
           </div>
         </div>
