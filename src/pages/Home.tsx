@@ -19,10 +19,15 @@ import {
 import IndiaMap from "@/components/IndiaMap";
 import ClientShowcase from "@/components/ClientShowcase";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useCountUpAnimation } from "@/hooks/useCountUpAnimation";
 import cncHeroImage from "@/assets/cnc-manufacturing-hero.jpg";
 
 const Home = () => {
   const scrollRef = useScrollAnimation();
+  const yearsCount = useCountUpAnimation(23);
+  const projectsCount = useCountUpAnimation(5000);
+  const clientsCount = useCountUpAnimation(150);
+  const qualityCount = useCountUpAnimation(99.9);
   const features = [
     {
       icon: Cog,
@@ -63,49 +68,36 @@ const Home = () => {
   return (
     <div ref={scrollRef} className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Professional CNC Image Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src={cncHeroImage} 
-            alt="Professional CNC Manufacturing" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          {/* Dimmed overlay for text readability */}
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
-          {/* Gradient overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40 z-10"></div>
-        </div>
-        
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-50 via-background to-neutral-100">
         <div className="container-modern relative z-20">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/20 text-white font-medium px-4 py-2 rounded-full text-sm mb-8 border border-white/20 backdrop-blur-sm">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 font-medium px-4 py-2 rounded-full text-sm mb-8 border border-emerald-500/20">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
               Trusted CNC Manufacturing Partner Since 2001
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
               Precision CNC & TRAUB Manufacturing
-              <span className="block text-white">Solutions</span>
+              <span className="block text-primary">Solutions</span>
             </h1>
             
-            <p className="text-xl mb-12 max-w-3xl mx-auto text-white/90">
+            <p className="text-xl mb-12 max-w-3xl mx-auto text-muted-foreground">
               Engineering precision for over 23 years with cutting-edge CNC and TRAUB technology, 
               delivering unmatched quality and reliability across industries.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
+                <Button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
                   <Target className="w-5 h-5" />
                   Request a Quote
-                </button>
+                </Button>
               </Link>
               <Link to="/services">
-                <button className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 backdrop-blur-sm">
+                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3">
                   View Our Services
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
+                </Button>
               </Link>
             </div>
           </div>
@@ -118,11 +110,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="section-modern bg-gradient-to-b from-background to-muted/20">
+      {/* Features Section - Multi-Card Animation */}
+      <section className="section-modern bg-gradient-to-b from-background to-neutral-50/50">
         <div className="container-modern">
           <div className="text-center mb-20 scroll-reveal">
-            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
+            <div className="inline-block bg-emerald-500/10 text-emerald-600 font-medium px-4 py-2 rounded-full text-sm mb-6">
               Our Excellence
             </div>
             <h2 className="heading-elegant mb-6">Why Choose Shree Varshitha Automats?</h2>
@@ -131,19 +123,32 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="relative">
             {features.map((feature, index) => (
-              <div key={index} className="card-modern text-center group cursor-pointer scroll-reveal">
-                <div className="mb-8 flex justify-center">
-                  <div className="relative">
-                    <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/20 rounded-2xl group-hover:from-primary/20 group-hover:to-primary/30 transition-all duration-300">
-                      <feature.icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+              <div
+                key={index}
+                className="sticky top-20 mb-4"
+                style={{
+                  zIndex: features.length - index,
+                }}
+              >
+                <div 
+                  className="card-modern text-center group cursor-pointer scroll-reveal bg-gradient-to-br from-white to-neutral-50/80 border border-neutral-200/50 hover:border-emerald-500/30 hover:shadow-2xl transition-all duration-500"
+                  style={{
+                    transform: `scale(${1 - index * 0.03}) translateY(${index * 15}px)`,
+                  }}
+                >
+                  <div className="mb-8 flex justify-center">
+                    <div className="relative">
+                      <div className="p-6 bg-gradient-to-br from-emerald-500/10 to-emerald-500/20 rounded-2xl group-hover:from-emerald-500/20 group-hover:to-emerald-500/30 transition-all duration-300">
+                        <feature.icon className="h-8 w-8 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="absolute inset-0 bg-emerald-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-emerald-600 transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -151,8 +156,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary"></div>
+      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500">
         <div className="absolute inset-0 opacity-5">
           <div className="w-full h-full bg-repeat bg-center" style={{
             backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
@@ -161,17 +165,45 @@ const Home = () => {
         
         <div className="container-modern">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center scroll-reveal group">
-                <div className="relative">
-                  <div className="text-5xl lg:text-6xl font-bold mb-3 text-primary-foreground group-hover:scale-110 transition-transform duration-300">
-                    {stat.number}
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-primary-foreground/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
+            <div className="text-center scroll-reveal group">
+              <div className="relative" ref={yearsCount.ref}>
+                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
+                  {yearsCount.count}+
                 </div>
-                <div className="text-primary-foreground/80 text-lg font-medium mt-4">{stat.label}</div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
               </div>
-            ))}
+              <div className="text-white/80 text-lg font-medium mt-4">Years of Excellence</div>
+            </div>
+            
+            <div className="text-center scroll-reveal group">
+              <div className="relative" ref={projectsCount.ref}>
+                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
+                  {projectsCount.count}+
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
+              </div>
+              <div className="text-white/80 text-lg font-medium mt-4">Projects Completed</div>
+            </div>
+            
+            <div className="text-center scroll-reveal group">
+              <div className="relative" ref={clientsCount.ref}>
+                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
+                  {clientsCount.count}+
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
+              </div>
+              <div className="text-white/80 text-lg font-medium mt-4">Happy Clients</div>
+            </div>
+            
+            <div className="text-center scroll-reveal group">
+              <div className="relative" ref={qualityCount.ref}>
+                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
+                  {qualityCount.count}%
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
+              </div>
+              <div className="text-white/80 text-lg font-medium mt-4">Quality Rate</div>
+            </div>
           </div>
         </div>
       </section>

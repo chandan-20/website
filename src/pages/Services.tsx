@@ -212,35 +212,35 @@ const Services = () => {
             </p>
           </div>
           
-          {/* Stacking Cards Container */}
-          <div className="relative">
+          {/* Stacking Cards Container - Fixed upward animation */}
+          <div className="relative space-y-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div 
                   key={index} 
-                  className="sticky top-20 mb-8"
+                  className="sticky mb-8"
                   style={{ 
+                    top: `${100 + index * 20}px`,
                     zIndex: services.length - index,
                   }}
                 >
                   <Card 
-                    className="h-auto border-2 border-gray-100 hover:border-primary/30 hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-gray-50/50 group cursor-pointer"
+                    className="h-auto border-2 border-neutral-200 hover:border-emerald-500/30 hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-neutral-50/50 group cursor-pointer"
                     style={{
-                      transform: `scale(${1 - index * 0.02})`,
-                      marginTop: index * 20
+                      transform: `scale(${1 - index * 0.02}) translateY(${-index * 10}px)`,
                     }}
                   >
                     <div className="flex flex-col lg:flex-row">
                       {/* Left side - Icon and Title */}
-                      <div className="lg:w-1/3 p-8 bg-gradient-to-br from-primary/5 to-primary/10 flex flex-col justify-center">
-                        <div className="w-20 h-20 mb-6 rounded-3xl flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary/30 group-hover:from-primary/30 group-hover:to-primary/40 transition-all duration-300 group-hover:scale-110">
-                          <Icon className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      <div className="lg:w-1/3 p-8 bg-gradient-to-br from-emerald-500/5 to-emerald-500/10 flex flex-col justify-center">
+                        <div className="w-20 h-20 mb-6 rounded-3xl flex items-center justify-center bg-gradient-to-br from-emerald-500/20 to-emerald-600/30 group-hover:from-emerald-500/30 group-hover:to-emerald-600/40 transition-all duration-300 group-hover:scale-110">
+                          <Icon className="h-10 w-10 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
                         </div>
-                        <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-primary/80 transition-colors duration-300">
+                        <h3 className="text-2xl font-bold text-emerald-600 mb-4 group-hover:text-emerald-700 transition-colors duration-300">
                           {service.title}
                         </h3>
-                        <p className="text-base text-gray-600 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
+                        <p className="text-base text-neutral-600 group-hover:text-neutral-700 transition-colors duration-300 leading-relaxed">
                           {service.description}
                         </p>
                       </div>
@@ -249,25 +249,25 @@ const Services = () => {
                       <div className="lg:w-2/3 p-8">
                         <div className="grid md:grid-cols-2 gap-8">
                           <div className="space-y-4">
-                            <h4 className="font-semibold text-primary text-sm uppercase tracking-wide">Key Features</h4>
+                            <h4 className="font-semibold text-emerald-600 text-sm uppercase tracking-wide">Key Features</h4>
                             <ul className="space-y-3">
                               {service.features.map((feature, idx) => (
                                 <li key={idx} className="flex items-start space-x-3 text-sm">
-                                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                                  <span className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">{feature}</span>
+                                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                                  <span className="text-neutral-600 group-hover:text-neutral-700 transition-colors duration-300 leading-relaxed">{feature}</span>
                                 </li>
                               ))}
                             </ul>
                           </div>
                           
                           <div className="space-y-4">
-                            <h4 className="font-semibold text-primary text-sm uppercase tracking-wide">Applications</h4>
-                            <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
+                            <h4 className="font-semibold text-emerald-600 text-sm uppercase tracking-wide">Applications</h4>
+                            <p className="text-sm text-neutral-600 group-hover:text-neutral-700 transition-colors duration-300 leading-relaxed">
                               {service.applications}
                             </p>
                             
                             <div className="pt-4">
-                              <div className="flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium">
+                              <div className="flex items-center text-emerald-600 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm font-medium">
                                 Learn more <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                               </div>
                             </div>
