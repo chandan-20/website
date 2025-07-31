@@ -9,6 +9,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCountUpAnimation } from "@/hooks/useCountUpAnimation";
 import cncHeroImage from "@/assets/cnc-manufacturing-hero.jpg";
 import AnimatedTestimonialsDemo from "@/components/animated-testimonials-demo";
+import WorkShowcase from "@/components/WorkShowcase";
 const Home = () => {
   const scrollRef = useScrollAnimation();
   const yearsCount = useCountUpAnimation(23);
@@ -144,11 +145,7 @@ const Home = () => {
             </div>
             
             <div className="scroll-reveal">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="CNC Manufacturing Facility" className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover group-hover:scale-[1.02] transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl"></div>
-              </div>
+              <WorkShowcase />
             </div>
           </div>
         </div>
