@@ -71,8 +71,8 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-50 via-background to-neutral-100">
         <div className="container-modern relative z-20">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 font-medium px-4 py-2 rounded-full text-sm mb-8 border border-emerald-500/20">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-8 border border-primary/20">
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
               Trusted CNC Manufacturing Partner Since 2001
             </div>
             
@@ -88,7 +88,7 @@ const Home = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <Button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
+                <Button className="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
                   <Target className="w-5 h-5" />
                   Request a Quote
                 </Button>
@@ -110,105 +110,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section - Multi-Card Animation */}
-      <section className="section-modern bg-gradient-to-b from-background to-neutral-50/50">
-        <div className="container-modern">
-          <div className="text-center mb-20 scroll-reveal">
-            <div className="inline-block bg-emerald-500/10 text-emerald-600 font-medium px-4 py-2 rounded-full text-sm mb-6">
-              Our Excellence
-            </div>
-            <h2 className="heading-elegant mb-6">Why Choose Shree Varshitha Automats?</h2>
-            <p className="text-modern max-w-3xl mx-auto">
-              Built on courage, determination, confidence, and unwavering trust
-            </p>
-          </div>
-          
-          <div className="relative">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="sticky top-20 mb-4"
-                style={{
-                  zIndex: features.length - index,
-                }}
-              >
-                <div 
-                  className="card-modern text-center group cursor-pointer scroll-reveal bg-gradient-to-br from-white to-neutral-50/80 border border-neutral-200/50 hover:border-emerald-500/30 hover:shadow-2xl transition-all duration-500"
-                  style={{
-                    transform: `scale(${1 - index * 0.03}) translateY(${index * 15}px)`,
-                  }}
-                >
-                  <div className="mb-8 flex justify-center">
-                    <div className="relative">
-                      <div className="p-6 bg-gradient-to-br from-emerald-500/10 to-emerald-500/20 rounded-2xl group-hover:from-emerald-500/20 group-hover:to-emerald-500/30 transition-all duration-300">
-                        <feature.icon className="h-8 w-8 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <div className="absolute inset-0 bg-emerald-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-emerald-600 transition-colors duration-300">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500">
-        <div className="absolute inset-0 opacity-5">
-          <div className="w-full h-full bg-repeat bg-center" style={{
-            backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
-          }}></div>
-        </div>
-        
-        <div className="container-modern">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center scroll-reveal group">
-              <div className="relative" ref={yearsCount.ref}>
-                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
-                  {yearsCount.count}+
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
-              </div>
-              <div className="text-white/80 text-lg font-medium mt-4">Years of Excellence</div>
-            </div>
-            
-            <div className="text-center scroll-reveal group">
-              <div className="relative" ref={projectsCount.ref}>
-                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
-                  {projectsCount.count}+
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
-              </div>
-              <div className="text-white/80 text-lg font-medium mt-4">Projects Completed</div>
-            </div>
-            
-            <div className="text-center scroll-reveal group">
-              <div className="relative" ref={clientsCount.ref}>
-                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
-                  {clientsCount.count}+
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
-              </div>
-              <div className="text-white/80 text-lg font-medium mt-4">Happy Clients</div>
-            </div>
-            
-            <div className="text-center scroll-reveal group">
-              <div className="relative" ref={qualityCount.ref}>
-                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
-                  {qualityCount.count}%
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
-              </div>
-              <div className="text-white/80 text-lg font-medium mt-4">Quality Rate</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
+      {/* About Section - Moved to first position */}
       <section className="section-modern">
         <div className="container-modern">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -271,6 +173,105 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Brand Strengths Section */}
+      <section className="section-modern bg-gradient-to-b from-background to-peach-light/30">
+        <div className="container-modern">
+          <div className="text-center mb-20 scroll-reveal">
+            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
+              Our Excellence
+            </div>
+            <h2 className="heading-elegant mb-6">Built on Precision and Trust</h2>
+            <p className="text-modern max-w-3xl mx-auto">
+              Delivering excellence through courage, determination, confidence, and unwavering trust
+            </p>
+          </div>
+          
+          <div className="relative">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="sticky top-20 mb-4"
+                style={{
+                  zIndex: features.length - index,
+                }}
+              >
+                <div 
+                  className="card-modern text-center group cursor-pointer scroll-reveal bg-gradient-to-br from-white to-peach-light/50 border border-neutral-200/50 hover:border-primary/30 hover:shadow-2xl transition-all duration-500"
+                  style={{
+                    transform: `scale(${1 - index * 0.03}) translateY(${index * 15}px)`,
+                  }}
+                >
+                  <div className="mb-8 flex justify-center">
+                    <div className="relative">
+                      <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/20 rounded-2xl group-hover:from-primary/20 group-hover:to-primary/30 transition-all duration-300">
+                        <feature.icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-r from-primary via-secondary to-primary">
+        <div className="absolute inset-0 opacity-5">
+          <div className="w-full h-full bg-repeat bg-center" style={{
+            backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
+          }}></div>
+        </div>
+        
+        <div className="container-modern">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center scroll-reveal group">
+              <div className="relative" ref={yearsCount.ref}>
+                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
+                  {yearsCount.count}+
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
+              </div>
+              <div className="text-white/80 text-lg font-medium mt-4">Years of Excellence</div>
+            </div>
+            
+            <div className="text-center scroll-reveal group">
+              <div className="relative" ref={projectsCount.ref}>
+                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
+                  {projectsCount.count}+
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
+              </div>
+              <div className="text-white/80 text-lg font-medium mt-4">Projects Completed</div>
+            </div>
+            
+            <div className="text-center scroll-reveal group">
+              <div className="relative" ref={clientsCount.ref}>
+                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
+                  {clientsCount.count}+
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
+              </div>
+              <div className="text-white/80 text-lg font-medium mt-4">Happy Clients</div>
+            </div>
+            
+            <div className="text-center scroll-reveal group">
+              <div className="relative" ref={qualityCount.ref}>
+                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
+                  {qualityCount.count}%
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
+              </div>
+              <div className="text-white/80 text-lg font-medium mt-4">Quality Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* India Map Section */}
       <section className="section-modern bg-gradient-to-b from-muted/20 to-background">
         <div className="container-modern">
@@ -287,6 +288,65 @@ const Home = () => {
           <div className="max-w-4xl mx-auto scroll-reveal">
             <div className="card-modern">
               <IndiaMap />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-modern bg-gradient-to-b from-peach-light/30 to-white">
+        <div className="container-modern">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
+              Client Testimonials
+            </div>
+            <h2 className="heading-elegant mb-6">What Our Clients Say</h2>
+            <p className="text-modern max-w-2xl mx-auto">
+              Discover why industry leaders choose Shree Varshitha Automats for their precision manufacturing needs
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="relative overflow-hidden">
+              <div className="flex gap-6 animate-[scroll_30s_linear_infinite] hover:animation-pause">
+                {[
+                  {
+                    quote: "Exceptional precision for our automotive components. Their CNC machining quality exceeded expectations.",
+                    name: "Rajesh Kumar",
+                    title: "Production Manager, AutoTech Industries",
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                  },
+                  {
+                    quote: "Outstanding TRAUB component manufacturing. Their attention to detail is crucial for our aerospace projects.",
+                    name: "Dr. Priya Sharma", 
+                    title: "Chief Engineer, AeroSpace Solutions",
+                    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+                  },
+                  {
+                    quote: "ISO-certified processes ensure the highest quality standards we require for medical devices.",
+                    name: "Amit Patel",
+                    title: "Quality Director, MedTech Innovations", 
+                    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                  }
+                ].map((testimonial, index) => (
+                  <div key={index} className="flex-shrink-0 w-80 bg-white rounded-2xl p-6 shadow-lg border border-neutral-100">
+                    <div className="flex items-center gap-4 mb-4">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <div className="font-semibold text-neutral-900">{testimonial.name}</div>
+                        <div className="text-sm text-neutral-600">{testimonial.title}</div>
+                      </div>
+                    </div>
+                    <blockquote className="text-neutral-700 leading-relaxed">
+                      "{testimonial.quote}"
+                    </blockquote>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -332,9 +392,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Contact CTA Section */}
       <section className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-1/4 animate-float">
             <Sparkles className="h-16 w-16 text-white" />
@@ -346,23 +406,23 @@ const Home = () => {
         
         <div className="container-modern text-center relative">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground scroll-reveal">
-              Ready to Start Your Precision Manufacturing Project?
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white scroll-reveal">
+              Partner with Precision Manufacturing Leaders
             </h2>
-            <p className="text-xl mb-12 text-primary-foreground/90 max-w-2xl mx-auto scroll-reveal">
-              Partner with us for engineering excellence. Get a consultation and detailed quote 
-              tailored to your specific requirements.
+            <p className="text-xl mb-12 text-white/90 max-w-2xl mx-auto scroll-reveal">
+              Experience the difference of working with India's trusted CNC and TRAUB component manufacturers. 
+              Get expert consultation and competitive quotes.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center scroll-reveal">
               <Link to="/contact">
-                <button className="bg-white text-primary hover:bg-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
+                <button className="bg-white text-primary hover:bg-neutral-100 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
                   <Heart className="w-5 h-5" />
-                  Request Quote Now
+                  Get Your Quote
                 </button>
               </Link>
               <Link to="/services">
                 <button className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3">
-                  View Our Work
+                  Explore Our Services
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
