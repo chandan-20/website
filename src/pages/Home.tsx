@@ -80,18 +80,15 @@ const Home = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg"
-              >
+              <Button onClick={() => document.getElementById('contact')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
                 <Target className="w-5 h-5" />
                 Request a Quote
               </Button>
-              <Button 
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                variant="outline" 
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3"
-              >
+              <Button onClick={() => document.getElementById('services')?.scrollIntoView({
+              behavior: 'smooth'
+            })} variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3">
                 View Our Services
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
@@ -138,7 +135,9 @@ const Home = () => {
                   </div>)}
               </div>
               
-              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="btn-modern group">
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="btn-modern group">
                 Learn More About Us
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
@@ -371,37 +370,7 @@ const Home = () => {
 
 
       {/* Contact CTA Section */}
-      <section id="contact" className="py-24 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-1/4 animate-float">
-            <Sparkles className="h-16 w-16 text-white" />
-          </div>
-          <div className="absolute bottom-10 right-1/4 animate-float" style={{
-          animationDelay: '1.5s'
-        }}>
-            <Target className="h-16 w-16 text-white" />
-          </div>
-        </div>
-        
-        <div className="container-modern text-center relative">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-xl text-white/90 mb-12">
-              Get a quote today and experience precision manufacturing excellence
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center scroll-reveal">
-              <button onClick={() => window.location.href = 'mailto:info@svaautomats.com'} className="bg-white text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg mx-auto">
-                <Target className="w-5 h-5" />
-                Request a Quote
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>;
 };
 export default Home;
