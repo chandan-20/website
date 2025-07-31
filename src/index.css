@@ -9,17 +9,17 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
+    --foreground: 0 0% 0%;
     --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
+    --popover-foreground: 0 0% 0%;
     --primary: 20 86% 32%;           /* #A0390E - deep rust orange */
     --primary-foreground: 0 0% 100%;
     --secondary: 18 91% 49%;         /* #E6530D - vibrant orange */
     --secondary-foreground: 0 0% 100%;
     --muted: 25 60% 95%;
-    --muted-foreground: 20 25% 35%;
+    --muted-foreground: 0 0% 0%;
     --accent: 18 91% 49%;            /* #E6530D - vibrant orange */
     --accent-foreground: 20 86% 32%;
     --destructive: 0 84.2% 60.2%;
@@ -111,21 +111,24 @@ All colors MUST be HSL.
   
   /* Modern typography */
   .heading-modern {
-    @apply text-4xl md:text-5xl font-bold text-foreground;
+    @apply text-4xl md:text-5xl font-normal text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 
   .text-modern {
-    @apply text-lg text-muted-foreground leading-relaxed;
+    @apply text-lg text-foreground leading-relaxed;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 300;
   }
 
   .heading-elegant {
-    @apply text-2xl md:text-3xl font-semibold text-foreground;
+    @apply text-2xl md:text-3xl font-normal text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    letter-spacing: -0.015em;
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 }
 
