@@ -1,41 +1,41 @@
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 const testimonials = [
   {
-    quote: "Shree Varshitha Automats delivered exceptional precision for our automotive components. Their CNC machining quality exceeded our expectations and helped us maintain strict quality standards.",
+    quote: "Shree Varshitha Automats delivered exceptional precision for our automotive components. Their CNC machining quality exceeded our expectations and helped us maintain strict quality standards that are crucial for our manufacturing process.",
     name: "Rajesh Kumar",
-    title: "Production Manager, AutoTech Industries",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    designation: "Production Manager at AutoTech Industries",
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    quote: "The TRAUB component manufacturing service provided by SVA is outstanding. Their attention to detail and timely delivery have been crucial for our aerospace projects.",
+    quote: "The TRAUB component manufacturing service provided by SVA is outstanding. Their attention to detail and timely delivery have been crucial for our aerospace projects. The precision and reliability are unmatched in the industry.",
     name: "Dr. Priya Sharma",
-    title: "Chief Engineer, AeroSpace Solutions",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+    designation: "Chief Engineer at AeroSpace Solutions",
+    src: "https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    quote: "Working with Shree Varshitha Automats for our medical device components has been excellent. Their ISO-certified processes ensure the highest quality standards we require.",
+    quote: "Working with Shree Varshitha Automats for our medical device components has been excellent. Their ISO-certified processes ensure the highest quality standards we require for our critical medical applications.",
     name: "Amit Patel",
-    title: "Quality Director, MedTech Innovations",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+    designation: "Quality Director at MedTech Innovations",
+    src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    quote: "SVA's rapid prototyping services helped us accelerate our product development significantly. Their technical expertise and quick turnaround times are unmatched.",
+    quote: "SVA's rapid prototyping services helped us accelerate our product development significantly. Their technical expertise and quick turnaround times are unmatched. They understand our requirements perfectly.",
     name: "Sneha Reddy",
-    title: "R&D Head, Industrial Systems Ltd",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+    designation: "R&D Head at Industrial Systems Ltd",
+    src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    quote: "The precision and consistency of SVA's CNC turning operations have been instrumental in maintaining our production quality. Highly recommended for any precision manufacturing needs.",
+    quote: "The precision and consistency of SVA's CNC turning operations have been instrumental in maintaining our production quality. Their commitment to excellence makes them our preferred manufacturing partner.",
     name: "Vikram Singh",
-    title: "Operations Manager, Heavy Industries Corp",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
-  }
-]
+    designation: "Operations Manager at Heavy Industries Corp",
+    src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
 
 export default function AnimatedTestimonialsDemo() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-peach-light to-white">
+    <section className="py-20 px-4 bg-gradient-to-b from-peach-light/30 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
@@ -49,10 +49,8 @@ export default function AnimatedTestimonialsDemo() {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          <AnimatedTestimonials testimonials={testimonials} />
-        </div>
+        <AnimatedTestimonials testimonials={testimonials} autoplay={true} />
       </div>
     </section>
-  )
+  );
 }

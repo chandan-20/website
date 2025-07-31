@@ -21,6 +21,7 @@ import ClientShowcase from "@/components/ClientShowcase";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCountUpAnimation } from "@/hooks/useCountUpAnimation";
 import cncHeroImage from "@/assets/cnc-manufacturing-hero.jpg";
+import AnimatedTestimonialsDemo from "@/components/animated-testimonials-demo";
 
 const Home = () => {
   const scrollRef = useScrollAnimation();
@@ -294,63 +295,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-modern bg-gradient-to-b from-peach-light/30 to-white">
-        <div className="container-modern">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
-              Client Testimonials
-            </div>
-            <h2 className="heading-elegant mb-6">What Our Clients Say</h2>
-            <p className="text-modern max-w-2xl mx-auto">
-              Discover why industry leaders choose Shree Varshitha Automats for their precision manufacturing needs
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="relative overflow-hidden">
-              <div className="flex gap-6 animate-[scroll_30s_linear_infinite] hover:animation-pause">
-                {[
-                  {
-                    quote: "Exceptional precision for our automotive components. Their CNC machining quality exceeded expectations.",
-                    name: "Rajesh Kumar",
-                    title: "Production Manager, AutoTech Industries",
-                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-                  },
-                  {
-                    quote: "Outstanding TRAUB component manufacturing. Their attention to detail is crucial for our aerospace projects.",
-                    name: "Dr. Priya Sharma", 
-                    title: "Chief Engineer, AeroSpace Solutions",
-                    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
-                  },
-                  {
-                    quote: "ISO-certified processes ensure the highest quality standards we require for medical devices.",
-                    name: "Amit Patel",
-                    title: "Quality Director, MedTech Innovations", 
-                    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-                  }
-                ].map((testimonial, index) => (
-                  <div key={index} className="flex-shrink-0 w-80 bg-white rounded-2xl p-6 shadow-lg border border-neutral-100">
-                    <div className="flex items-center gap-4 mb-4">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <div className="font-semibold text-neutral-900">{testimonial.name}</div>
-                        <div className="text-sm text-neutral-600">{testimonial.title}</div>
-                      </div>
-                    </div>
-                    <blockquote className="text-neutral-700 leading-relaxed">
-                      "{testimonial.quote}"
-                    </blockquote>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AnimatedTestimonialsDemo />
 
       {/* Client Showcase */}
       <ClientShowcase />
