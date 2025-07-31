@@ -406,24 +406,14 @@ const Home = () => {
         
         <div className="container-modern text-center relative">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white scroll-reveal">
-              Ready to Start Your CNC Project?
-            </h2>
-            <p className="text-xl mb-12 text-white/90 max-w-2xl mx-auto scroll-reveal">
-              From concept to completion, our expert team is ready to deliver precision machining solutions that exceed your expectations.
-            </p>
+            
+            
             <div className="flex flex-col sm:flex-row gap-6 justify-center scroll-reveal">
               <Link to="/contact">
-                <button className="bg-white text-primary hover:bg-neutral-100 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 shadow-lg">
-                  <Heart className="w-5 h-5" />
-                  Get Your Quote
-                </button>
+                
               </Link>
               <Link to="/services">
-                <button className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3">
-                  View Detailed Services
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                
               </Link>
             </div>
           </div>
