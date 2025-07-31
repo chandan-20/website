@@ -2,75 +2,63 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Cog, 
-  Award, 
-  Users, 
-  Clock, 
-  CheckCircle, 
-  ArrowRight,
-  Shield,
-  Settings,
-  Zap,
-  Target,
-  Heart,
-  Sparkles,
-  RotateCcw,
-  Factory,
-  Layers
-} from "lucide-react";
+import { Cog, Award, Users, Clock, CheckCircle, ArrowRight, Shield, Settings, Zap, Target, Heart, Sparkles, RotateCcw, Factory, Layers } from "lucide-react";
 import IndiaMap from "@/components/IndiaMap";
 import ClientShowcase from "@/components/ClientShowcase";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCountUpAnimation } from "@/hooks/useCountUpAnimation";
 import cncHeroImage from "@/assets/cnc-manufacturing-hero.jpg";
 import AnimatedTestimonialsDemo from "@/components/animated-testimonials-demo";
-
 const Home = () => {
   const scrollRef = useScrollAnimation();
   const yearsCount = useCountUpAnimation(23);
   const projectsCount = useCountUpAnimation(5000);
   const clientsCount = useCountUpAnimation(150);
   const qualityCount = useCountUpAnimation(99.9);
-  const features = [
-    {
-      icon: Cog,
-      title: "Precision Machining",
-      description: "State-of-the-art CNC equipment delivering micron-level accuracy"
-    },
-    {
-      icon: Award,
-      title: "23+ Years Experience",
-      description: "Proven track record in delivering quality solutions across industries"
-    },
-    {
-      icon: Shield,
-      title: "Quality Assured",
-      description: "ISO certified processes ensuring consistent quality and reliability"
-    },
-    {
-      icon: Zap,
-      title: "Fast Turnaround",
-      description: "Efficient production processes meeting tight deadlines"
-    }
-  ];
-
-  const industries = [
-    { name: "Automotive", description: "Engine components, transmission parts" },
-    { name: "Aerospace", description: "Critical flight components, landing gear" },
-    { name: "Medical", description: "Surgical instruments, implants" },
-    { name: "Industrial", description: "Machinery parts, tooling components" }
-  ];
-
-  const stats = [
-    { number: "23+", label: "Years of Excellence" },
-    { number: "5000+", label: "Projects Completed" },
-    { number: "150+", label: "Happy Clients" },
-    { number: "99.9%", label: "Quality Rate" }
-  ];
-
-  return (
-    <div ref={scrollRef} className="min-h-screen">
+  const features = [{
+    icon: Cog,
+    title: "Precision Machining",
+    description: "State-of-the-art CNC equipment delivering micron-level accuracy"
+  }, {
+    icon: Award,
+    title: "23+ Years Experience",
+    description: "Proven track record in delivering quality solutions across industries"
+  }, {
+    icon: Shield,
+    title: "Quality Assured",
+    description: "ISO certified processes ensuring consistent quality and reliability"
+  }, {
+    icon: Zap,
+    title: "Fast Turnaround",
+    description: "Efficient production processes meeting tight deadlines"
+  }];
+  const industries = [{
+    name: "Automotive",
+    description: "Engine components, transmission parts"
+  }, {
+    name: "Aerospace",
+    description: "Critical flight components, landing gear"
+  }, {
+    name: "Medical",
+    description: "Surgical instruments, implants"
+  }, {
+    name: "Industrial",
+    description: "Machinery parts, tooling components"
+  }];
+  const stats = [{
+    number: "23+",
+    label: "Years of Excellence"
+  }, {
+    number: "5000+",
+    label: "Projects Completed"
+  }, {
+    number: "150+",
+    label: "Happy Clients"
+  }, {
+    number: "99.9%",
+    label: "Quality Rate"
+  }];
+  return <div ref={scrollRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-50 via-background to-neutral-100">
         <div className="container-modern relative z-20">
@@ -138,20 +126,12 @@ const Home = () => {
               </div>
               
               <div className="space-y-4">
-                {[
-                  "Advanced CNC milling and turning capabilities",
-                  "Specialized TRAUB component manufacturing",
-                  "ISO certified quality management systems",
-                  "Expert engineering and design support",
-                  "On-time delivery with competitive pricing"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                {["Advanced CNC milling and turning capabilities", "Specialized TRAUB component manufacturing", "ISO certified quality management systems", "Expert engineering and design support", "On-time delivery with competitive pricing"].map((item, index) => <div key={index} className="flex items-center space-x-3">
                     <div className="flex-shrink-0 w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center">
                       <CheckCircle className="h-3 w-3 text-primary" />
                     </div>
                     <span className="text-muted-foreground">{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <Link to="/about">
@@ -165,11 +145,7 @@ const Home = () => {
             <div className="scroll-reveal">
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
-                  alt="CNC Manufacturing Facility" 
-                  className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                />
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="CNC Manufacturing Facility" className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl"></div>
               </div>
             </div>
@@ -179,57 +155,7 @@ const Home = () => {
 
 
       {/* Stats Section */}
-      <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-r from-primary via-secondary to-primary">
-        <div className="absolute inset-0 opacity-5">
-          <div className="w-full h-full bg-repeat bg-center" style={{
-            backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
-          }}></div>
-        </div>
-        
-        <div className="container-modern">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center scroll-reveal group">
-              <div className="relative" ref={yearsCount.ref}>
-                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
-                  {yearsCount.count}+
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
-              </div>
-              <div className="text-white/80 text-lg font-medium mt-4">Years of Excellence</div>
-            </div>
-            
-            <div className="text-center scroll-reveal group">
-              <div className="relative" ref={projectsCount.ref}>
-                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
-                  {projectsCount.count}+
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
-              </div>
-              <div className="text-white/80 text-lg font-medium mt-4">Projects Completed</div>
-            </div>
-            
-            <div className="text-center scroll-reveal group">
-              <div className="relative" ref={clientsCount.ref}>
-                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
-                  {clientsCount.count}+
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
-              </div>
-              <div className="text-white/80 text-lg font-medium mt-4">Happy Clients</div>
-            </div>
-            
-            <div className="text-center scroll-reveal group">
-              <div className="relative" ref={qualityCount.ref}>
-                <div className="text-5xl lg:text-6xl font-bold mb-3 text-white group-hover:scale-110 transition-transform duration-300">
-                  {qualityCount.count}%
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300"></div>
-              </div>
-              <div className="text-white/80 text-lg font-medium mt-4">Quality Rate</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
 
       {/* India Map Section */}
@@ -273,16 +199,14 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {industries.map((industry, index) => (
-              <div key={index} className="card-modern text-center group cursor-pointer scroll-reveal">
+            {industries.map((industry, index) => <div key={index} className="card-modern text-center group cursor-pointer scroll-reveal">
                 <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
                   {industry.name}
                 </h3>
                 <p className="text-muted-foreground">
                   {industry.description}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="text-center mt-16 scroll-reveal">
@@ -473,7 +397,9 @@ const Home = () => {
           <div className="absolute top-10 left-1/4 animate-float">
             <Sparkles className="h-16 w-16 text-white" />
           </div>
-          <div className="absolute bottom-10 right-1/4 animate-float" style={{ animationDelay: '1.5s' }}>
+          <div className="absolute bottom-10 right-1/4 animate-float" style={{
+          animationDelay: '1.5s'
+        }}>
             <Target className="h-16 w-16 text-white" />
           </div>
         </div>
@@ -503,8 +429,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
