@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-white border-t">
+  return <footer className="bg-white border-t">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -76,16 +74,12 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-600">
-            © 2024 Shree Varshitha Automats. All rights reserved.
-          </p>
+          <p className="text-sm text-gray-600">© 2025 Shree Varshitha Automats. All rights reserved.</p>
           <p className="text-sm text-gray-600 mt-2 md:mt-0">
             Precision CNC & TRAUB Manufacturing • Quality • Reliability
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
