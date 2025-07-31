@@ -21,7 +21,7 @@ All colors MUST be HSL.
     --muted: 25 60% 95%;
     --muted-foreground: 0 0% 0%;
     --accent: 18 91% 49%;            /* #E6530D - vibrant orange */
-    --accent-foreground: 20 86% 32%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
     --border: 215 25% 82%;
@@ -114,13 +114,24 @@ All colors MUST be HSL.
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-weight: 400;
-    color: hsl(var(--foreground));
+    color: hsl(0, 0%, 0%) !important;
   }
   
-  p, span, div, a, button {
+  p, span, div, a, button, li, td, th, label {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-weight: 300;
-    color: hsl(var(--foreground));
+    color: hsl(0, 0%, 0%) !important;
+  }
+  
+  .text-primary,
+  .text-primary-foreground,
+  .text-secondary,
+  .text-secondary-foreground,
+  .text-accent,
+  .text-accent-foreground,
+  .text-muted-foreground,
+  .text-foreground {
+    color: hsl(0, 0%, 0%) !important;
   }
   
   /* Modern typography */
