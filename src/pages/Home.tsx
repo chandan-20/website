@@ -174,50 +174,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Brand Strengths Section */}
-      <section className="section-modern bg-gradient-to-b from-background to-peach-light/30">
-        <div className="container-modern">
-          <div className="text-center mb-20 scroll-reveal">
-            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
-              Our Excellence
-            </div>
-            <h2 className="heading-elegant mb-6">Built on Precision and Trust</h2>
-            <p className="text-modern max-w-3xl mx-auto">
-              Delivering excellence through courage, determination, confidence, and unwavering trust
-            </p>
-          </div>
-          
-          <div className="relative">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="sticky top-20 mb-4"
-                style={{
-                  zIndex: features.length - index,
-                }}
-              >
-                <div 
-                  className="card-modern text-center group cursor-pointer scroll-reveal bg-gradient-to-br from-white to-peach-light/50 border border-neutral-200/50 hover:border-primary/30 hover:shadow-2xl transition-all duration-500"
-                  style={{
-                    transform: `scale(${1 - index * 0.03}) translateY(${index * 15}px)`,
-                  }}
-                >
-                  <div className="mb-8 flex justify-center">
-                    <div className="relative">
-                      <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/20 rounded-2xl group-hover:from-primary/20 group-hover:to-primary/30 transition-all duration-300">
-                        <feature.icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Stats Section */}
       <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-r from-primary via-secondary to-primary">
