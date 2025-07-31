@@ -14,14 +14,14 @@ All colors MUST be HSL.
     --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
-    --primary: 20 90% 48%;
+    --primary: 20 86% 32%;           /* #A0390E - deep rust orange */
     --primary-foreground: 0 0% 100%;
-    --secondary: 25 95% 53%;
+    --secondary: 18 91% 49%;         /* #E6530D - vibrant orange */
     --secondary-foreground: 0 0% 100%;
     --muted: 25 60% 95%;
     --muted-foreground: 20 25% 35%;
-    --accent: 24 100% 92%;
-    --accent-foreground: 20 90% 15%;
+    --accent: 18 91% 49%;            /* #E6530D - vibrant orange */
+    --accent-foreground: 20 86% 32%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
     --border: 215 25% 82%;
@@ -29,24 +29,24 @@ All colors MUST be HSL.
     --ring: 215 28% 17%;
     --radius: 0.75rem;
     
-    /* Modern rust/orange palette */
-    --rust-deep: 20 90% 15%;
-    --rust-primary: 20 90% 48%;
-    --orange-vibrant: 25 95% 53%;
-    --peach-soft: 24 60% 90%;
-    --peach-light: 25 40% 96%;
-    --neutral-50: 24 100% 98%;
-    --neutral-100: 24 60% 95%;
-    --neutral-200: 24 30% 87%;
+    /* Rust Orange Color Palette - Exact Colors */
+    --rust-deep: 20 86% 32%;         /* #A0390E - deep rust orange */
+    --rust-primary: 20 86% 32%;      /* #A0390E - deep rust orange */
+    --orange-vibrant: 18 91% 49%;    /* #E6530D - vibrant orange */
+    --peach-soft: 25 67% 85%;        /* #F3D5C1 - soft peach */
+    --peach-light: 22 50% 95%;       /* #F9F0EC - off-white */
+    --neutral-50: 0 0% 100%;         /* #FFFFFF - white base */
+    --neutral-100: 22 50% 95%;       /* #F9F0EC - off-white */
+    --neutral-200: 25 67% 85%;       /* #F3D5C1 - soft peach */
     --neutral-600: 20 25% 35%;
-    --neutral-900: 20 90% 15%;
+    --neutral-900: 20 86% 32%;
     
-    /* Modern gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(20, 90%, 48%) 0%, hsl(25, 95%, 53%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(20, 90%, 15%) 0%, hsl(20, 90%, 25%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(24, 100%, 98%) 0%, hsl(24, 60%, 95%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(24, 60%, 98%) 100%);
-    --gradient-orange: linear-gradient(135deg, hsl(20, 90%, 48%) 0%, hsl(25, 95%, 53%) 100%);
+    /* Modern gradients using exact rust orange colors */
+    --gradient-primary: linear-gradient(135deg, hsl(20, 86%, 32%) 0%, hsl(18, 91%, 49%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(20, 86%, 32%) 0%, hsl(20, 86%, 25%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(22, 50%, 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(25, 67%, 95%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(20, 86%, 32%) 0%, hsl(18, 91%, 49%) 100%);
     
     /* Modern shadows */
     --shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);

@@ -14,7 +14,10 @@ import {
   Zap,
   Target,
   Heart,
-  Sparkles
+  Sparkles,
+  RotateCcw,
+  Factory,
+  Layers
 } from "lucide-react";
 import IndiaMap from "@/components/IndiaMap";
 import ClientShowcase from "@/components/ClientShowcase";
@@ -293,6 +296,176 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="section-modern">
+        <div className="container-modern">
+          <div className="text-center mb-20 scroll-reveal">
+            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
+              Our Services
+            </div>
+            <h2 className="heading-elegant mb-6">Precision CNC Machining Services</h2>
+            <p className="text-modern max-w-2xl mx-auto">
+              Advanced manufacturing capabilities designed to meet your precise specifications
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <Cog className="h-6 w-6 text-primary" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
+                CNC Milling
+              </h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                High-precision 3, 4, and 5-axis CNC milling for complex geometries and tight tolerances
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  3-axis to 5-axis machining capabilities
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Tolerance up to ±0.001mm
+                </li>
+              </ul>
+            </div>
+
+            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <RotateCcw className="h-6 w-6 text-primary" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
+                CNC Turning
+              </h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Precision turning operations for cylindrical components with superior surface finish
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Multi-spindle turning centers
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Live tooling capabilities
+                </li>
+              </ul>
+            </div>
+
+            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <Zap className="h-6 w-6 text-primary" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
+                Rapid Prototyping
+              </h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Fast turnaround prototype development for design validation and testing
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Quick quote and production
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Single piece to small batch
+                </li>
+              </ul>
+            </div>
+
+            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <Factory className="h-6 w-6 text-primary" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
+                High-Volume Production
+              </h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Scalable manufacturing solutions for large quantity requirements
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Automated production lines
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Consistent quality control
+                </li>
+              </ul>
+            </div>
+
+            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <Settings className="h-6 w-6 text-primary" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
+                Custom Tooling
+              </h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Specialized tooling and fixture design for unique manufacturing requirements
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Custom jig and fixture design
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Tooling optimization
+                </li>
+              </ul>
+            </div>
+
+            <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <Layers className="h-6 w-6 text-primary" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-primary group-hover:text-primary/80 transition-colors duration-300">
+                TRAUB Manufacturing
+              </h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Specialized TRAUB component manufacturing with precision Swiss-type machining
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Swiss-type automatic lathes
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  Multi-spindle capabilities
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="text-center mt-16 scroll-reveal">
+            <Link to="/services">
+              <button className="btn-outline-modern group">
+                View All Services
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Contact CTA Section */}
       <section className="py-24 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary"></div>
@@ -308,11 +481,10 @@ const Home = () => {
         <div className="container-modern text-center relative">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white scroll-reveal">
-              Partner with Precision Manufacturing Leaders
+              Ready to Start Your CNC Project?
             </h2>
             <p className="text-xl mb-12 text-white/90 max-w-2xl mx-auto scroll-reveal">
-              Experience the difference of working with India's trusted CNC and TRAUB component manufacturers. 
-              Get expert consultation and competitive quotes.
+              From concept to completion, our expert team is ready to deliver precision machining solutions that exceed your expectations.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center scroll-reveal">
               <Link to="/contact">
@@ -323,7 +495,7 @@ const Home = () => {
               </Link>
               <Link to="/services">
                 <button className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 flex items-center gap-3">
-                  Explore Our Services
+                  View Detailed Services
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
