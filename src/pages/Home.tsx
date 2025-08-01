@@ -40,7 +40,7 @@ const Home = () => {
     description: "Engine components, transmission parts",
     icon: <Factory className="w-12 h-12" />
   }, {
-    name: "Aerospace", 
+    name: "Aerospace",
     description: "Critical flight components, landing gear",
     icon: <Zap className="w-12 h-12" />
   }, {
@@ -170,24 +170,9 @@ const Home = () => {
           </div>
           
           <div className="flex flex-col md:flex-row gap-8 justify-center items-center max-w-5xl mx-auto">
-            <AnimatedServiceCard
-              title="CNC Milling"
-              content="High-precision 3, 4, and 5-axis CNC milling for complex geometries with tolerances up to ±0.001mm."
-              icon={<Cog className="w-12 h-12" />}
-              className="scroll-reveal"
-            />
-            <AnimatedServiceCard
-              title="CNC Turning"
-              content="Precision turning operations for cylindrical components with superior surface finish and live tooling capabilities."
-              icon={<RotateCcw className="w-12 h-12" />}
-              className="scroll-reveal md:mt-8"
-            />
-            <AnimatedServiceCard
-              title="TRAUB Manufacturing"
-              content="Specialized TRAUB component manufacturing with precision Swiss-type machining for high-volume production."
-              icon={<Layers className="w-12 h-12" />}
-              className="scroll-reveal md:mt-16"
-            />
+            <AnimatedServiceCard title="CNC Milling" content="High-precision 3, 4, and 5-axis CNC milling for complex geometries with tolerances up to ±0.001mm." icon={<Cog className="w-12 h-12" />} className="scroll-reveal" />
+            <AnimatedServiceCard title="CNC Turning" content="Precision turning operations for cylindrical components with superior surface finish and live tooling capabilities." icon={<RotateCcw className="w-12 h-12" />} className="scroll-reveal md:mt-8" />
+            <AnimatedServiceCard title="TRAUB Manufacturing" content="Specialized TRAUB component manufacturing with precision Swiss-type machining for high-volume production." icon={<Layers className="w-12 h-12" />} className="scroll-reveal md:mt-16" />
           </div>
         </div>
       </section>
@@ -206,51 +191,13 @@ const Home = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {industries.map((industry, index) => (
-              <IndustryCard
-                key={index}
-                title={industry.name}
-                description={industry.description}
-                icon={industry.icon}
-                variant={index === 0 ? 'secondary' : index === 1 ? 'tertiary' : index === 2 ? 'quaternary' : 'primary'}
-                className="scroll-reveal"
-              />
-            ))}
+            {industries.map((industry, index) => <IndustryCard key={index} title={industry.name} description={industry.description} icon={industry.icon} variant={index === 0 ? 'secondary' : index === 1 ? 'tertiary' : index === 2 ? 'quaternary' : 'primary'} className="scroll-reveal" />)}
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="section-modern bg-gradient-to-b from-muted/20 to-background">
-        <div className="container-modern">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center scroll-reveal">
-              <div ref={clientsCount.ref} className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {clientsCount.count}+
-              </div>
-              <p className="text-muted-foreground font-medium">Happy Clients</p>
-            </div>
-            <div className="text-center scroll-reveal">
-              <div ref={projectsCount.ref} className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {projectsCount.count}+
-              </div>
-              <p className="text-muted-foreground font-medium">Projects Completed</p>
-            </div>
-            <div className="text-center scroll-reveal">
-              <div ref={qualityCount.ref} className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {qualityCount.count}%
-              </div>
-              <p className="text-muted-foreground font-medium">Quality Rate</p>
-            </div>
-            <div className="text-center scroll-reveal">
-              <div ref={yearsCount.ref} className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {yearsCount.count}+
-              </div>
-              <p className="text-muted-foreground font-medium">Years Experience</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* India Map Section */}
       <section className="section-modern bg-gradient-to-b from-muted/20 to-background">

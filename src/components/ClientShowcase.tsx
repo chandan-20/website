@@ -43,19 +43,7 @@ const ClientShowcase = () => {
     logo: "BHEL"
   }];
   return <div className="relative overflow-hidden bg-gradient-to-r from-muted/50 to-background py-12">
-      <div className="relative">
-        <div className="flex space-x-12 client-slide">
-          {[...clients, ...clients, ...clients].map((client, index) => (
-            <div key={index} className="flex-shrink-0 w-20 h-20 bg-card rounded-lg flex items-center justify-center border border-border">
-              <span className="text-sm font-semibold text-foreground">{client.logo}</span>
-            </div>
-          ))}
-        </div>
-        
-        {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-background to-transparent z-10"></div>
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-background to-transparent z-10"></div>
-      </div>
+      
       
       {/* Statistics */}
       <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto px-4">
