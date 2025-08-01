@@ -10,7 +10,6 @@ interface AnimatedServiceCardProps {
 
 const AnimatedServiceCard = ({ title, content, icon, className }: AnimatedServiceCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,29 +43,26 @@ const AnimatedServiceCard = ({ title, content, icon, className }: AnimatedServic
         "relative w-full max-w-xs h-48 rounded-xl transition-all duration-700 cubic-bezier(0.23, 1, 0.320, 1) cursor-pointer overflow-hidden",
         "bg-gradient-to-br from-primary via-primary/90 to-primary/80",
         "flex items-center justify-center",
-        isVisible && !isHovered && "transform rotate-[-2deg] scale-105 shadow-lg",
-        isHovered && "transform rotate-0 scale-110 shadow-2xl",
+        isVisible && "transform rotate-[-2deg] scale-105 shadow-2xl",
         className
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Icon - visible when not hovered */}
+      {/* Icon - visible when not scrolled into view */}
       <div 
         className={cn(
           "text-white transition-all duration-700 cubic-bezier(0.23, 1, 0.320, 1)",
-          isHovered ? "scale-0 rotate-[-45deg] opacity-0" : "scale-100 rotate-0 opacity-100"
+          isVisible ? "scale-0 rotate-[-45deg] opacity-0" : "scale-100 rotate-0 opacity-100"
         )}
       >
         {icon}
       </div>
 
-      {/* Content - visible when hovered */}
+      {/* Content - visible when scrolled into view */}
       <div
         className={cn(
           "absolute inset-0 p-6 bg-white transition-all duration-700 cubic-bezier(0.23, 1, 0.320, 1)",
           "flex flex-col justify-center",
-          isHovered 
+          isVisible 
             ? "transform translate-x-0 translate-y-0 rotate-0 opacity-100" 
             : "transform translate-x-[-50%] translate-y-[-50%] rotate-[-45deg] opacity-0"
         )}
