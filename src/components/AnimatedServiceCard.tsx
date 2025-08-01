@@ -9,14 +9,14 @@ interface AnimatedServiceCardProps {
 }
 
 const AnimatedServiceCard = ({ title, content, icon, className }: AnimatedServiceCardProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isContentVisible, setIsContentVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setIsContentVisible(true);
         }
       },
       {
@@ -42,27 +42,26 @@ const AnimatedServiceCard = ({ title, content, icon, className }: AnimatedServic
       className={cn(
         "relative w-full max-w-xs h-48 rounded-xl transition-all duration-700 cubic-bezier(0.23, 1, 0.320, 1) cursor-pointer overflow-hidden",
         "bg-gradient-to-br from-primary via-primary/90 to-primary/80",
-        "flex items-center justify-center",
-        isVisible && "transform rotate-[-2deg] scale-105 shadow-2xl",
+        "flex items-center justify-center shadow-lg",
         className
       )}
     >
-      {/* Icon - visible when not scrolled into view */}
+      {/* Icon - always visible, hides when content shows */}
       <div 
         className={cn(
           "text-white transition-all duration-700 cubic-bezier(0.23, 1, 0.320, 1)",
-          isVisible ? "scale-0 rotate-[-45deg] opacity-0" : "scale-100 rotate-0 opacity-100"
+          isContentVisible ? "scale-0 rotate-[-45deg] opacity-0" : "scale-100 rotate-0 opacity-100"
         )}
       >
         {icon}
       </div>
 
-      {/* Content - visible when scrolled into view */}
+      {/* Content - shows when scrolled into view */}
       <div
         className={cn(
           "absolute inset-0 p-6 bg-white transition-all duration-700 cubic-bezier(0.23, 1, 0.320, 1)",
           "flex flex-col justify-center",
-          isVisible 
+          isContentVisible 
             ? "transform translate-x-0 translate-y-0 rotate-0 opacity-100" 
             : "transform translate-x-[-50%] translate-y-[-50%] rotate-[-45deg] opacity-0"
         )}
