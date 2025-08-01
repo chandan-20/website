@@ -10,6 +10,7 @@ import { useCountUpAnimation } from "@/hooks/useCountUpAnimation";
 import cncHeroImage from "@/assets/cnc-manufacturing-hero.jpg";
 import AnimatedTestimonialsDemo from "@/components/animated-testimonials-demo";
 import WorkShowcase from "@/components/WorkShowcase";
+import AnimatedServiceCard from "@/components/AnimatedServiceCard";
 const Home = () => {
   const scrollRef = useScrollAnimation();
   const yearsCount = useCountUpAnimation(23);
@@ -163,149 +164,25 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="relative max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100 hover:border-primary/20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                        <Cog className="h-8 w-8 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-semibold mb-4 text-black group-hover:text-primary transition-colors duration-300">
-                        CNC Milling
-                      </h3>
-                      <p className="text-black/70 mb-6 leading-relaxed text-lg">
-                        High-precision 3, 4, and 5-axis CNC milling for complex geometries and tight tolerances
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <ul className="space-y-3 text-black/60">
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            3-axis to 5-axis machining capabilities
-                          </li>
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Tolerance up to ±0.001mm
-                          </li>
-                        </ul>
-                        <ul className="space-y-3 text-black/60">
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Materials: Aluminum, Steel, Stainless Steel, Titanium
-                          </li>
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Complex geometries and intricate designs
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                        <p className="text-sm font-medium text-black/80 mb-2">Applications:</p>
-                        <p className="text-sm text-black/60">Aerospace components, automotive parts, medical devices</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100 hover:border-primary/20 relative overflow-hidden transform translate-x-8">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                        <RotateCcw className="h-8 w-8 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-semibold mb-4 text-black group-hover:text-primary transition-colors duration-300">
-                        CNC Turning
-                      </h3>
-                      <p className="text-black/70 mb-6 leading-relaxed text-lg">
-                        Precision turning operations for cylindrical components with superior surface finish
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <ul className="space-y-3 text-black/60">
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Multi-spindle turning centers
-                          </li>
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Live tooling capabilities
-                          </li>
-                        </ul>
-                        <ul className="space-y-3 text-black/60">
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Diameter range: 0.5mm to 500mm
-                          </li>
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Surface finish Ra 0.1μm
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                        <p className="text-sm font-medium text-black/80 mb-2">Applications:</p>
-                        <p className="text-sm text-black/60">Shafts, pins, fasteners, hydraulic components</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card-modern group cursor-pointer scroll-reveal hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-100 hover:border-primary/20 relative overflow-hidden transform translate-x-16">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                        <Layers className="h-8 w-8 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-semibold mb-4 text-black group-hover:text-primary transition-colors duration-300">
-                        TRAUB Manufacturing
-                      </h3>
-                      <p className="text-black/70 mb-6 leading-relaxed text-lg">
-                        Specialized TRAUB component manufacturing with precision Swiss-type machining
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <ul className="space-y-3 text-black/60">
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Swiss-type automatic lathes
-                          </li>
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Multi-spindle capabilities
-                          </li>
-                        </ul>
-                        <ul className="space-y-3 text-black/60">
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            High-volume production
-                          </li>
-                          <li className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                            Micro-machining capabilities
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                        <p className="text-sm font-medium text-black/80 mb-2">Applications:</p>
-                        <p className="text-sm text-black/60">Precision screws, connectors, electronic components</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-center max-w-5xl mx-auto">
+            <AnimatedServiceCard
+              title="CNC Milling"
+              content="High-precision 3, 4, and 5-axis CNC milling for complex geometries with tolerances up to ±0.001mm."
+              icon={<Cog className="w-12 h-12" />}
+              className="scroll-reveal"
+            />
+            <AnimatedServiceCard
+              title="CNC Turning"
+              content="Precision turning operations for cylindrical components with superior surface finish and live tooling capabilities."
+              icon={<RotateCcw className="w-12 h-12" />}
+              className="scroll-reveal md:mt-8"
+            />
+            <AnimatedServiceCard
+              title="TRAUB Manufacturing"
+              content="Specialized TRAUB component manufacturing with precision Swiss-type machining for high-volume production."
+              icon={<Layers className="w-12 h-12" />}
+              className="scroll-reveal md:mt-16"
+            />
           </div>
         </div>
       </section>

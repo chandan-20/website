@@ -45,7 +45,11 @@ const ClientShowcase = () => {
   return <div className="relative overflow-hidden bg-gradient-to-r from-muted/50 to-background py-12">
       <div className="relative">
         <div className="flex space-x-12 client-slide">
-          {[...clients, ...clients, ...clients].map((client, index) => {})}
+          {[...clients, ...clients, ...clients].map((client, index) => (
+            <div key={index} className="flex-shrink-0 w-20 h-20 bg-card rounded-lg flex items-center justify-center border border-border">
+              <span className="text-sm font-semibold text-foreground">{client.logo}</span>
+            </div>
+          ))}
         </div>
         
         {/* Gradient overlays */}
