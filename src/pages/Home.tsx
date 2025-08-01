@@ -11,6 +11,7 @@ import cncHeroImage from "@/assets/cnc-manufacturing-hero.jpg";
 import AnimatedTestimonialsDemo from "@/components/animated-testimonials-demo";
 import WorkShowcase from "@/components/WorkShowcase";
 import AnimatedServiceCard from "@/components/AnimatedServiceCard";
+import IndustryCard from "@/components/IndustryCard";
 const Home = () => {
   const scrollRef = useScrollAnimation();
   const yearsCount = useCountUpAnimation(23);
@@ -36,16 +37,20 @@ const Home = () => {
   }];
   const industries = [{
     name: "Automotive",
-    description: "Engine components, transmission parts"
+    description: "Engine components, transmission parts",
+    icon: <Factory className="w-12 h-12" />
   }, {
-    name: "Aerospace",
-    description: "Critical flight components, landing gear"
+    name: "Aerospace", 
+    description: "Critical flight components, landing gear",
+    icon: <Zap className="w-12 h-12" />
   }, {
     name: "Medical",
-    description: "Surgical instruments, implants"
+    description: "Surgical instruments, implants",
+    icon: <Heart className="w-12 h-12" />
   }, {
-    name: "Industrial",
-    description: "Machinery parts, tooling components"
+    name: "Hydraulics",
+    description: "Hydraulic cylinders, valve components",
+    icon: <Settings className="w-12 h-12" />
   }];
   const stats = [{
     number: "23+",
@@ -187,10 +192,64 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Industries Section */}
+      <section id="industries" className="section-modern">
+        <div className="container-modern">
+          <div className="text-center mb-20 scroll-reveal">
+            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
+              Industries
+            </div>
+            <h2 className="heading-elegant mb-6">Industries We Serve</h2>
+            <p className="text-modern max-w-2xl mx-auto">
+              Delivering precision solutions across diverse sectors with specialized expertise
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {industries.map((industry, index) => (
+              <IndustryCard
+                key={index}
+                title={industry.name}
+                description={industry.description}
+                icon={industry.icon}
+                className="scroll-reveal"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Stats Section */}
-      
-
+      <section className="section-modern bg-gradient-to-b from-muted/20 to-background">
+        <div className="container-modern">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="text-center scroll-reveal">
+              <div ref={clientsCount.ref} className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {clientsCount.count}+
+              </div>
+              <p className="text-muted-foreground font-medium">Happy Clients</p>
+            </div>
+            <div className="text-center scroll-reveal">
+              <div ref={projectsCount.ref} className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {projectsCount.count}+
+              </div>
+              <p className="text-muted-foreground font-medium">Projects Completed</p>
+            </div>
+            <div className="text-center scroll-reveal">
+              <div ref={qualityCount.ref} className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {qualityCount.count}%
+              </div>
+              <p className="text-muted-foreground font-medium">Quality Rate</p>
+            </div>
+            <div className="text-center scroll-reveal">
+              <div ref={yearsCount.ref} className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {yearsCount.count}+
+              </div>
+              <p className="text-muted-foreground font-medium">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* India Map Section */}
       <section className="section-modern bg-gradient-to-b from-muted/20 to-background">
@@ -219,31 +278,6 @@ const Home = () => {
       {/* Client Showcase */}
       <ClientShowcase />
 
-      {/* Industries Section */}
-      <section id="industries" className="section-modern">
-        <div className="container-modern">
-          <div className="text-center mb-20 scroll-reveal">
-            <div className="inline-block bg-primary/10 text-primary font-medium px-4 py-2 rounded-full text-sm mb-6">
-              Industries
-            </div>
-            <h2 className="heading-elegant mb-6">Industries We Serve</h2>
-            <p className="text-modern max-w-2xl mx-auto">
-              Delivering precision solutions across diverse sectors with specialized expertise
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {industries.map((industry, index) => <div key={index} className="card-modern text-center group cursor-pointer scroll-reveal">
-                <h3 className="text-xl font-semibold mb-4 text-black group-hover:text-primary transition-colors duration-300">
-                  {industry.name}
-                </h3>
-                <p className="text-black/70">
-                  {industry.description}
-                </p>
-              </div>)}
-          </div>
-        </div>
-      </section>
 
 
       {/* Contact CTA Section */}
