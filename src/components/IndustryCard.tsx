@@ -6,17 +6,41 @@ interface IndustryCardProps {
   description: string;
   icon: React.ReactNode;
   className?: string;
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'quaternary';
 }
 
-const IndustryCard = ({ title, description, icon, className }: IndustryCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+const IndustryCard = ({ title, description, icon, className, variant = 'primary' }: IndustryCardProps) => {
+  const [isActivated, setIsActivated] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const variants = {
+    primary: {
+      bg: 'hsl(var(--primary))',
+      beforeBg: 'hsl(var(--primary) / 0.7)',
+      afterBg: 'hsl(var(--primary) / 0.4)'
+    },
+    secondary: {
+      bg: '#22c55e',
+      beforeBg: '#86efac',
+      afterBg: '#bbf7d0'
+    },
+    tertiary: {
+      bg: '#f59e0b',
+      beforeBg: '#fcd34d',
+      afterBg: '#fef3c7'
+    },
+    quaternary: {
+      bg: '#8b5cf6',
+      beforeBg: '#c4b5fd',
+      afterBg: '#e9d5ff'
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsHovered(true);
+          setIsActivated(true);
         }
       },
       {
@@ -40,36 +64,51 @@ const IndustryCard = ({ title, description, icon, className }: IndustryCardProps
     <div
       ref={cardRef}
       className={cn(
-        "relative flex items-center justify-center w-full aspect-square rounded-3xl transition-all duration-500 cubic-bezier(0.23, 1, 0.32, 1) cursor-pointer",
-        isHovered && "transform translate-y-[-16px]",
+        "relative flex items-center justify-center w-full max-w-[320px] mx-auto rounded-3xl transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
+        isActivated && "transform translate-y-[-16px]",
         className
       )}
     >
-      {/* Main content */}
       <div
-        className={cn(
-          "relative flex flex-col items-center justify-center gap-6 p-8 rounded-3xl w-full h-full text-white overflow-hidden bg-primary transition-all duration-500 cubic-bezier(0.23, 1, 0.32, 1)",
-          "before:absolute before:content-[''] before:top-[-4%] before:left-1/2 before:w-[90%] before:h-[90%] before:transform before:translate-x-[-50%] before:bg-primary/70 before:z-[-1] before:transform-origin-bottom before:rounded-[inherit] before:transition-all before:duration-500 before:cubic-bezier(0.23, 1, 0.32, 1)",
-          "after:absolute after:content-[''] after:top-[-8%] after:left-1/2 after:w-[80%] after:h-[80%] after:transform after:translate-x-[-50%] after:bg-primary/40 after:z-[-2] after:transform-origin-bottom after:rounded-[inherit] after:transition-all after:duration-500 after:cubic-bezier(0.23, 1, 0.32, 1)",
-          isHovered && "before:rotate-[-8deg] before:top-0 before:w-full before:h-full",
-          isHovered && "after:rotate-[8deg] after:top-0 after:w-full after:h-full"
-        )}
+        className="relative flex flex-col items-start gap-6 p-9 rounded-[22px] text-white overflow-hidden w-full aspect-square transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)"
+        style={{ 
+          background: variants[variant].bg,
+        }}
       >
+        {/* Before pseudo element */}
+        <div
+          className={cn(
+            "absolute top-[-4%] left-1/2 w-[90%] h-[90%] transform translate-x-[-50%] z-[-1] origin-bottom rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
+            isActivated && "rotate-[-8deg] top-0 w-full h-full"
+          )}
+          style={{
+            background: variants[variant].beforeBg
+          }}
+        />
+        
+        {/* After pseudo element */}
+        <div
+          className={cn(
+            "absolute top-[-8%] left-1/2 w-[80%] h-[80%] transform translate-x-[-50%] z-[-2] origin-bottom rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
+            isActivated && "rotate-[8deg] top-0 w-full h-full"
+          )}
+          style={{
+            background: variants[variant].afterBg
+          }}
+        />
+
         {/* Icon */}
         <div className="w-12 h-12 text-white z-10">
           {icon}
         </div>
-        
+
         {/* Title */}
-        <h3 className="text-xl font-bold text-center z-10 transition-all duration-500 cubic-bezier(0.23, 1, 0.32, 1)">
+        <h3 className="text-xl font-bold z-10 leading-tight">
           {title}
         </h3>
-        
+
         {/* Description */}
-        <p className={cn(
-          "text-sm text-center text-white/90 z-10 transition-all duration-500 cubic-bezier(0.23, 1, 0.32, 1)",
-          isHovered ? "opacity-100 transform translate-y-0" : "opacity-70 transform translate-y-2"
-        )}>
+        <p className="z-10 opacity-100 text-lg leading-relaxed transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)">
           {description}
         </p>
       </div>

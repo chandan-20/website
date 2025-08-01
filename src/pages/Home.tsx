@@ -212,6 +212,7 @@ const Home = () => {
                 title={industry.name}
                 description={industry.description}
                 icon={industry.icon}
+                variant={index === 0 ? 'secondary' : index === 1 ? 'tertiary' : index === 2 ? 'quaternary' : 'primary'}
                 className="scroll-reveal"
               />
             ))}
