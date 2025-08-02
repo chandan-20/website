@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 
 interface IndustryCardProps {
@@ -10,9 +10,6 @@ interface IndustryCardProps {
 }
 
 const IndustryCard = ({ title, description, icon, className, variant = 'primary' }: IndustryCardProps) => {
-  const [isActivated, setIsActivated] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-
   const variants = {
     primary: {
       bg: 'hsl(var(--primary))',
@@ -21,7 +18,7 @@ const IndustryCard = ({ title, description, icon, className, variant = 'primary'
     },
     secondary: {
       bg: '#22c55e',
-      beforeBg: '#86efac',
+      beforeBg: '#86efac', 
       afterBg: '#bbf7d0'
     },
     tertiary: {
@@ -36,69 +33,33 @@ const IndustryCard = ({ title, description, icon, className, variant = 'primary'
     }
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsActivated(true);
-        }
-      },
-      {
-        threshold: 0.3,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, []);
-
   return (
     <div
-      ref={cardRef}
       className={cn(
-        "relative flex items-center justify-center w-full max-w-[320px] mx-auto rounded-[24px] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
-        isActivated && "transform translate-y-[-16px]",
+        "card group relative flex items-center justify-center w-full max-w-[320px] mx-auto rounded-[24px] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1) hover:translate-y-[-16px]",
         className
       )}
       style={{ lineHeight: 1.6 }}
     >
       <div
-        className="relative flex flex-col items-start gap-6 p-9 rounded-[22px] text-white overflow-hidden w-full aspect-square transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)"
+        className="content relative flex flex-col items-start gap-6 p-9 rounded-[22px] text-white overflow-hidden w-full aspect-square transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)"
         style={{ 
           background: variants[variant].bg,
         }}
       >
         {/* Before pseudo element - exactly matching the reference */}
         <div
-          className={cn(
-            "absolute left-1/2 z-[-1] rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
-            "top-[-4%] w-[90%] h-[90%] transform translate-x-[-50%] origin-bottom",
-            isActivated && "rotate-[-8deg] top-0 w-full h-full"
-          )}
+          className="absolute top-[-4%] left-1/2 w-[90%] h-[90%] transform translate-x-[-50%] origin-bottom z-[-1] rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1) group-hover:rotate-[-8deg] group-hover:top-0 group-hover:w-full group-hover:h-full"
           style={{
             background: variants[variant].beforeBg,
-            content: '""'
           }}
         />
         
         {/* After pseudo element - exactly matching the reference */}
         <div
-          className={cn(
-            "absolute left-1/2 z-[-2] rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
-            "top-[-8%] w-[80%] h-[80%] transform translate-x-[-50%] origin-bottom",
-            isActivated && "rotate-[8deg] top-0 w-full h-full"
-          )}
+          className="absolute top-[-8%] left-1/2 w-[80%] h-[80%] transform translate-x-[-50%] origin-bottom z-[-2] rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1) group-hover:rotate-[8deg] group-hover:top-0 group-hover:w-full group-hover:h-full"
           style={{
             background: variants[variant].afterBg,
-            content: '""'
           }}
         />
 
