@@ -385,23 +385,12 @@ All colors MUST be HSL.
     aspect-ratio: 1;
   }
 
+  /* Primary variant - Dark rust */
   .industry-card-content.primary {
-    background: hsl(var(--primary));
+    background: hsl(var(--rust-deep));
   }
 
-  .industry-card-content.secondary {
-    background: hsl(var(--primary) / 0.8);
-  }
-
-  .industry-card-content.tertiary {
-    background: hsl(var(--primary) / 0.6);
-  }
-
-  .industry-card-content.quaternary {
-    background: hsl(var(--primary) / 0.4);
-  }
-
-  .industry-card-content::before {
+  .industry-card-content.primary::before {
     position: absolute;
     content: "";
     top: -4%;
@@ -409,29 +398,14 @@ All colors MUST be HSL.
     width: 90%;
     height: 90%;
     transform: translate(-50%);
+    background: hsl(var(--peach-soft));
     z-index: -1;
     transform-origin: bottom;
     border-radius: inherit;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  .industry-card-content.primary::before {
-    background: hsl(var(--primary) / 0.3);
-  }
-
-  .industry-card-content.secondary::before {
-    background: hsl(var(--primary) / 0.25);
-  }
-
-  .industry-card-content.tertiary::before {
-    background: hsl(var(--primary) / 0.2);
-  }
-
-  .industry-card-content.quaternary::before {
-    background: hsl(var(--primary) / 0.15);
-  }
-
-  .industry-card-content::after {
+  .industry-card-content.primary::after {
     position: absolute;
     content: "";
     top: -8%;
@@ -439,26 +413,116 @@ All colors MUST be HSL.
     width: 80%;
     height: 80%;
     transform: translate(-50%);
+    background: hsl(var(--peach-light));
     z-index: -2;
     transform-origin: bottom;
     border-radius: inherit;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  .industry-card-content.primary::after {
-    background: hsl(var(--primary) / 0.15);
+  /* Secondary variant - Lighter rust */
+  .industry-card-content.secondary {
+    background: hsl(20, 70%, 40%);
+  }
+
+  .industry-card-content.secondary::before {
+    position: absolute;
+    content: "";
+    top: -4%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%);
+    background: hsl(25, 60%, 80%);
+    z-index: -1;
+    transform-origin: bottom;
+    border-radius: inherit;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .industry-card-content.secondary::after {
-    background: hsl(var(--primary) / 0.12);
+    position: absolute;
+    content: "";
+    top: -8%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%);
+    background: hsl(22, 45%, 92%);
+    z-index: -2;
+    transform-origin: bottom;
+    border-radius: inherit;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Tertiary variant - Medium rust */
+  .industry-card-content.tertiary {
+    background: hsl(20, 60%, 45%);
+  }
+
+  .industry-card-content.tertiary::before {
+    position: absolute;
+    content: "";
+    top: -4%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%);
+    background: hsl(25, 55%, 75%);
+    z-index: -1;
+    transform-origin: bottom;
+    border-radius: inherit;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .industry-card-content.tertiary::after {
-    background: hsl(var(--primary) / 0.1);
+    position: absolute;
+    content: "";
+    top: -8%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%);
+    background: hsl(22, 40%, 90%);
+    z-index: -2;
+    transform-origin: bottom;
+    border-radius: inherit;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Quaternary variant - Lightest rust */
+  .industry-card-content.quaternary {
+    background: hsl(20, 50%, 50%);
+  }
+
+  .industry-card-content.quaternary::before {
+    position: absolute;
+    content: "";
+    top: -4%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%);
+    background: hsl(25, 50%, 70%);
+    z-index: -1;
+    transform-origin: bottom;
+    border-radius: inherit;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .industry-card-content.quaternary::after {
-    background: hsl(var(--primary) / 0.08);
+    position: absolute;
+    content: "";
+    top: -8%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%);
+    background: hsl(22, 35%, 88%);
+    z-index: -2;
+    transform-origin: bottom;
+    border-radius: inherit;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .industry-card:hover {
