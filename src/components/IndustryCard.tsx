@@ -16,8 +16,8 @@ const IndustryCard = ({ title, description, icon, className, variant = 'primary'
   const variants = {
     primary: {
       bg: 'hsl(var(--primary))',
-      beforeBg: 'hsl(var(--primary) / 0.7)',
-      afterBg: 'hsl(var(--primary) / 0.4)'
+      beforeBg: 'hsl(var(--primary) / 0.3)',
+      afterBg: 'hsl(var(--primary) / 0.15)'
     },
     secondary: {
       bg: '#22c55e',
@@ -64,10 +64,11 @@ const IndustryCard = ({ title, description, icon, className, variant = 'primary'
     <div
       ref={cardRef}
       className={cn(
-        "relative flex items-center justify-center w-full max-w-[320px] mx-auto rounded-3xl transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
+        "relative flex items-center justify-center w-full max-w-[320px] mx-auto rounded-[24px] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
         isActivated && "transform translate-y-[-16px]",
         className
       )}
+      style={{ lineHeight: 1.6 }}
     >
       <div
         className="relative flex flex-col items-start gap-6 p-9 rounded-[22px] text-white overflow-hidden w-full aspect-square transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)"
@@ -75,25 +76,29 @@ const IndustryCard = ({ title, description, icon, className, variant = 'primary'
           background: variants[variant].bg,
         }}
       >
-        {/* Before pseudo element */}
+        {/* Before pseudo element - exactly matching the reference */}
         <div
           className={cn(
-            "absolute top-[-4%] left-1/2 w-[90%] h-[90%] transform translate-x-[-50%] z-[-1] origin-bottom rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
+            "absolute left-1/2 z-[-1] rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
+            "top-[-4%] w-[90%] h-[90%] transform translate-x-[-50%] origin-bottom",
             isActivated && "rotate-[-8deg] top-0 w-full h-full"
           )}
           style={{
-            background: variants[variant].beforeBg
+            background: variants[variant].beforeBg,
+            content: '""'
           }}
         />
         
-        {/* After pseudo element */}
+        {/* After pseudo element - exactly matching the reference */}
         <div
           className={cn(
-            "absolute top-[-8%] left-1/2 w-[80%] h-[80%] transform translate-x-[-50%] z-[-2] origin-bottom rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
+            "absolute left-1/2 z-[-2] rounded-[inherit] transition-all duration-[480ms] cubic-bezier(0.23, 1, 0.32, 1)",
+            "top-[-8%] w-[80%] h-[80%] transform translate-x-[-50%] origin-bottom",
             isActivated && "rotate-[8deg] top-0 w-full h-full"
           )}
           style={{
-            background: variants[variant].afterBg
+            background: variants[variant].afterBg,
+            content: '""'
           }}
         />
 
