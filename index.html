@@ -10,9 +10,284 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="stylesheet" href="/workspace/styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
-    <div id="app-root">Loading...</div>
+  <body class="min-h-screen flex flex-col">
+    <!-- Background ornaments -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-blue-200/30 blur-3xl animate-float"></div>
+      <div class="absolute top-1/3 -right-20 h-72 w-72 rounded-full bg-indigo-200/30 blur-3xl animate-float" style="animation-delay:1.2s"></div>
+      <div class="absolute -bottom-24 left-1/3 h-80 w-80 rounded-full bg-sky-100/50 blur-3xl animate-float" style="animation-delay:.6s"></div>
+    </div>
+
+    <div class="relative flex size-full min-h-screen flex-col">
+      <!-- Header -->
+      <header class="header" id="site-header">
+        <div class="container mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+          <a href="#" class="flex items-center gap-3">
+            <svg class="h-9 w-9 text-[var(--primary-color)]" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+              <path d="M39.998 35.764C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor"></path>
+            </svg>
+            <span class="text-lg md:text-xl font-bold tracking-tight">Shree Varshitha Automats</span>
+          </a>
+
+          <!-- Desktop nav -->
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)] transition-colors" href="#about">About</a>
+            <a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)] transition-colors" href="#expertise">Expertise</a>
+            <a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)] transition-colors" href="#industries">Industries</a>
+            <a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)] transition-colors" href="#why-choose-us">Why Us</a>
+            <a class="text-sm font-medium text-slate-600 hover:text-[var(--primary-color)] transition-colors" href="#contact">Contact</a>
+            <a href="#contact" class="button_primary">Get a Quote</a>
+          </nav>
+
+          <!-- Mobile menu toggle -->
+          <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur">
+          <div class="container mx-auto px-6 py-4 flex flex-col gap-4">
+            <a class="text-sm font-medium text-slate-700 hover:text-[var(--primary-color)]" href="#about">About</a>
+            <a class="text-sm font-medium text-slate-700 hover:text-[var(--primary-color)]" href="#expertise">Expertise</a>
+            <a class="text-sm font-medium text-slate-700 hover:text-[var(--primary-color)]" href="#industries">Industries</a>
+            <a class="text-sm font-medium text-slate-700 hover:text-[var(--primary-color)]" href="#why-choose-us">Why Us</a>
+            <a class="text-sm font-medium text-slate-700 hover:text-[var(--primary-color)]" href="#contact">Contact</a>
+            <a href="#contact" class="button_primary w-full text-center">Get a Quote</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1">
+        <!-- Hero -->
+        <section class="relative min-h-[70vh] md:min-h-[80vh] grid place-items-end overflow-hidden">
+          <div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.58) 20%, rgba(0, 0, 0, 0.15) 80%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9cW9JQ6XHQ-JW_hcx-PoJTbcbU4NBM0vWu_vHSdp0NxCKExgrujQ1cYescwubFhyJ-X036EK1FTwDIfSKhXdcErQ_QiDE31MGapRR7zohx6kf_EeuBVGK3cF53M-LKtQ_WQwBC7rZMwjURKmKhGE1NkPxv9pBYRdYtX3h2xjgaQ7CGb-ZIguEZpPE1qM5-iLWCQvWnMnP99pS8dvu_gSgB90hl3aZPZHVnZYA1pjnFL9FR6nIsrVBqT7YFwtnFNphEE-B_A1idj6m');"></div>
+          <div class="absolute top-0 left-0 right-0 h-[2px] shimmer-border animate-shimmer"></div>
+
+          <div class="container mx-auto px-6 md:px-10 pb-14 text-white">
+            <div class="max-w-3xl">
+              <h1 class="typography_h1 text-5xl md:text-6xl drop-shadow-xl animate-fadeInUp">Precision Manufacturing for a Modern World</h1>
+              <p class="mt-5 text-lg md:text-xl font-light max-w-2xl drop-shadow animate-fadeInUp" style="animation-delay:.12s">
+                Shree Varshitha Automats delivers high-quality TRAUB and CNC machined parts, tailored to your exact specifications. Our commitment to precision and innovation ensures your projects succeed.
+              </p>
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a href="#expertise" class="button_primary px-7 py-3 text-base">Explore Our Services</a>
+                <a href="#contact" class="button_secondary px-7 py-3 text-base">Get a Quote</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-20">
+          <div class="container mx-auto px-6 md:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div class="reveal">
+                <h2 class="typography_h2 text-3xl md:text-4xl">About Shree Varshitha Automats</h2>
+                <p class="typography_body mt-5">
+                  Established with a vision to deliver excellence in precision engineering, Shree Varshitha Automats has grown to become a trusted partner for businesses in need of high-quality TRAUB and CNC machined components. Our journey began with a commitment to quality, innovation, and customer satisfaction, principles that continue to guide us today.
+                </p>
+                <p class="typography_body mt-4">
+                  Our state-of-the-art manufacturing facility is equipped with the latest technology, and our team of skilled engineers and technicians bring years of experience to every project. We pride ourselves on our ability to meet the most demanding specifications and deadlines, ensuring that our clients receive parts that are not only precise but also reliable.
+                </p>
+              </div>
+              <div class="reveal">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1_h-iK6H-4o9d-0GgH5A9F0D9j9F9H9D9F0F9j9D9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9H9F9-o8v5l" alt="Our Team at Shree Varshitha Automats" class="rounded-xl shadow-xl w-full aspect-[3/2] object-cover" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Expertise -->
+        <section id="expertise" class="py-20 bg-[var(--secondary-color)]/70">
+          <div class="container mx-auto px-6 md:px-10">
+            <div class="text-center mb-12 reveal">
+              <h2 class="typography_h2 text-3xl md:text-4xl">Our Expertise</h2>
+              <p class="typography_body mt-3 max-w-3xl mx-auto">
+                We specialize in TRAUB and CNC machining, offering a wide range of services from prototyping to mass production. Our state-of-the-art facility and experienced team guarantee exceptional quality and precision.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="card text-center items-center reveal">
+                <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-lg mb-4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpVnJCCm9bOPRu2_nlU-wOksG9xvyOX5jsvPyQqE1Zik10ib_2Qs_C08lBRJzRMcbnkSTp4IO8SminGinHRZsQiBgvpz49dyZQBFhvpoFBXGitiol3q_0wz8uAUcn1f1u8ZQ8pIP7d61u3MdnskHnotfJhjtPFPCYh7V8VGZJnTV8kovYis1Z8gfgO7Xc4bv8yjmlyFgiycyBnaFbkNYI7aC26uGfzhcYmbnvk4OVKvG2jwMPY2-jLkASlSLL6ebUxyW1csM4Hcki8');"></div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">TRAUB Machining</h3>
+                <p class="typography_body mt-2">High-precision machining for complex parts with tight tolerances.</p>
+              </div>
+              <div class="card text-center items-center reveal">
+                <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-lg mb-4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAryshXe_-WBrJkIo8m0QZGG4f-RpbV9qj6tTOsBZ44rHqCvlkc7MT34WkrPHRfQ9c061XcN-BS4rXzsN1d53a7dB7-x8Ne0te6-mbCPYI2m7ExbbCil5JHNH0kn9SGbUpjRcsEOhYbC3uQXSrTSQ2GtKzmWJPkQmZD-Zsivchb5YjOVVwDn-jh8bypDOuYFL2XX4Bj3KWcNVYRcRakYQakwbm9zzC6ZqPj8K22XuPa3q9tvhR5eMZwhZJUhcE_LVC3i701x7jFfCDF');"></div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">CNC Machining</h3>
+                <p class="typography_body mt-2">Versatile machining solutions for a variety of materials and applications.</p>
+              </div>
+              <div class="card text-center items-center reveal">
+                <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-lg mb-4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2m5kziu92SfuuDvInnZeYep1WvLJGCePniuXfHL4TSI5kgSc_Fmrynt9IW_6PNzqLFtkoPui9KhMEPNsbWj4_H86whnWrp5UBB8xAyNum48Cm9T8wCix3_0824YdkhojSURFpa5gv3yG78lVAY-_g-klTk1AnsbGk2EJ-6GDj-PkQwOxWg4RDWZg6r2NVLydgWHbY7HeBl4_uKQ9crTYTuamw_8qF4MP7yCHUe063IZEQaIEAyoCEjvGGkjPSNbzgysyle7EKm-_F');"></div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Quality Assurance</h3>
+                <p class="typography_body mt-2">Rigorous quality control processes to ensure every part meets our high standards.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Industries -->
+        <section id="industries" class="py-20 bg-white">
+          <div class="container mx-auto px-6 md:px-10">
+            <div class="text-center mb-12 reveal">
+              <h2 class="typography_h2 text-3xl md:text-4xl">Industries We Serve</h2>
+              <p class="typography_body mt-3 max-w-3xl mx-auto">From automotive to aerospace, our precision components are trusted by leading industries for their critical applications.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div class="card text-center p-0 overflow-hidden reveal">
+                <img alt="Automotive Industry" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBaiBQu3CNdJw9O5_aabfGEwbnszbqNSmVXngLz56W7qXSFluy9X-C9Ac7rhjaiNyAzzyOP3ehHnbg-0PpGivtVcJdh8DLA6XPe1JkKpYBbsLxLvfEODeWMo6ftnoLMMmkQNYBaZ-rbbic44Usp0YQrnF6SbZ3O_6kbPvQu6biTVXNUMB5FduMhlFV-GbvBsZUM4eKGdsmmHubdbKM6NME6UW-MKUKMJ8SPozpeHM3AZ5REtGj1vUmhKJ0umONRNhywJVjGyaf-wDZ" />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[var(--text-primary)]">Automotive</h3>
+                  <p class="typography_body mt-2">Precision parts for automotive systems and components, ensuring reliability and performance for the road ahead.</p>
+                </div>
+              </div>
+              <div class="card text-center p-0 overflow-hidden reveal">
+                <img alt="Aerospace Industry" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVRQUfnjT7KlmoPgyfq9elqlfqhDYD1wamFCYYZOUnPwaq7umrBceAq2n6586-n74RDeYKmgIzey75WA7E8WZy40nO-VLFvr-NI6SwRrxySz2obfpRtfKNI_79g1beJwrbg8UTvk4oR1ngrUpdWcu9AS_Z1PJ1W2zZTHWwRJFBLXR5Tv8Y-p3kxwIoe8703mbxkYH_TTkAGjMHk_FvcVmFgrWbzWn_OOqPVzdHKqHdLEBo0zzbICLnSf8TnBKgBXkJ8Nz2RqUKiGJv" />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[var(--text-primary)]">Aerospace</h3>
+                  <p class="typography_body mt-2">High-reliability components for aerospace applications, where precision and durability are paramount.</p>
+                </div>
+              </div>
+              <div class="card text-center p-0 overflow-hidden reveal">
+                <img alt="Medical Devices Industry" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiLk5aVVeeaXR04HA4KHSbWMGJkYwukEULgSO1Aa-GavCMxgL1TC7Q-3lfvgz1fBJ9Q6TiCVsjXw1754VT25G1kZ1XAsNFiiSD58DZHRV5iIj1m0O2UA3JXzHJnEK1aB35yl7w6aEiRRnT4bu6O5He-ROxV4ANMtM6kLTavRt0Wv3maOENGeXUK6_vosQjpqBaho0GYh-TsEeKMNGKGhmW1u-IYnS-Spy9Y3Lg3gezJwtkWxG50Bcvw815kb-_2pRjITc6rowNdk4r" />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[var(--text-primary)]">Medical Devices</h3>
+                  <p class="typography_body mt-2">Critical components for medical equipment and devices, manufactured to the highest standards of quality.</p>
+                </div>
+              </div>
+              <div class="card text-center p-0 overflow-hidden reveal">
+                <img alt="Electronics Industry" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRNIw-ksKluI3CD_bwz7QtVW03bjvEYR1-pCSBcSv4iCSo7QUlbPbfYHjGgEHXFTImtdqCt5t-jepbxuF4QPeGZDk5EIbzYjq5Aa8uhajv7Lc4Hdni0mMS1mRWY8rICUIZxiJ68qdncbLCAPjzeSHwcOclW2VjcVXClxcM94eKy1Xbk6o9b30TRnCsBVwk_a328MnklzgdRH9OL0S4Nr23iZI1XbDcWnbWWpNLhH-ggqZR9kuIOW8IGa-gpXmrkR4YeyL3gZ5B-tea" />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[var(--text-primary)]">Electronics</h3>
+                  <p class="typography_body mt-2">Miniature and complex parts for electronic devices and assemblies, where every micron matters.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Why choose us -->
+        <section id="why-choose-us" class="py-20">
+          <div class="container mx-auto px-6 md:px-10">
+            <div class="text-center mb-12 reveal">
+              <h2 class="typography_h2 text-3xl md:text-4xl">Why Choose Us?</h2>
+              <p class="typography_body mt-3 max-w-3xl mx-auto">
+                Shree Varshitha Automats is dedicated to providing exceptional service and quality. We work closely with our clients to understand their needs and deliver solutions that exceed expectations.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div class="card reveal">
+                <div class="text-[var(--primary-color)] mb-4">
+                  <svg fill="currentColor" height="36px" viewBox="0 0 256 256" width="36px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Fast Turnaround</h3>
+                <p class="typography_body mt-2">Efficient processes and quick delivery times to meet your deadlines.</p>
+              </div>
+              <div class="card reveal">
+                <div class="text-[var(--primary-color)] mb-4">
+                  <svg fill="currentColor" height="36px" viewBox="0 0 256 256" width="36px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Customer Support</h3>
+                <p class="typography_body mt-2">Dedicated support team to assist you throughout the manufacturing process.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-20 bg-gray-50">
+          <div class="container mx-auto px-6 md:px-10">
+            <div class="text-center mb-12 reveal">
+              <h2 class="typography_h2 text-3xl md:text-4xl">Contact Us</h2>
+              <p class="typography_body mt-3 max-w-3xl mx-auto">
+                We're here to help. Reach out to us for a quote, to discuss your project, or for any inquiries you may have. Our team is ready to provide you with the best solutions.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div class="card reveal">
+                <h3 class="text-2xl font-bold text-[var(--text-primary)] mb-6">Send us a Message</h3>
+                <form id="contact-form" class="space-y-4">
+                  <div>
+                    <label for="name" class="block text-sm font-medium text-[var(--text-secondary)] mb-1">Name</label>
+                    <input id="name" type="text" class="input w-full" placeholder="Jane Doe" required />
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-[var(--text-secondary)] mb-1">Email</label>
+                    <input id="email" type="email" class="input w-full" placeholder="jane@example.com" required />
+                  </div>
+                  <div>
+                    <label for="message" class="block text-sm font-medium text-[var(--text-secondary)] mb-1">Message</label>
+                    <textarea id="message" rows="4" class="input w-full" placeholder="Tell us about your project" required></textarea>
+                  </div>
+                  <button type="submit" class="button_primary w-full py-3">Submit</button>
+                  <p id="form-status" class="hidden text-sm text-green-600">Thanks! We'll reach out shortly.</p>
+                </form>
+              </div>
+
+              <div class="flex flex-col justify-center reveal">
+                <div class="flex items-start gap-4 mb-6">
+                  <div class="text-[var(--primary-color)] mt-1">
+                    <svg fill="currentColor" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold text-[var(--text-primary)]">Address</h4>
+                    <p class="typography_body">123 Industrial Park, Bangalore, Karnataka, 560001, India</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 mb-6">
+                  <div class="text-[var(--primary-color)] mt-1">
+                    <svg fill="currentColor" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.42 21 3 14.58 3 7c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.02.74-.25 1.02l-2.2 2.2z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold text-[var(--text-primary)]">Phone</h4>
+                    <p class="typography_body">+91 98765 43210</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="text-[var(--primary-color)] mt-1">
+                    <svg fill="currentColor" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold text-[var(--text-primary)]">Email</h4>
+                    <p class="typography_body">contact@sva.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-gray-300">
+        <div class="container mx-auto px-6 md:px-10 py-12">
+          <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+            <div class="flex items-center gap-3">
+              <svg class="h-8 w-8 text-white" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+                <path d="M39.998 35.764C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor"></path>
+              </svg>
+              <h2 class="text-xl font-bold text-white">Shree Varshitha Automats</h2>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-6">
+              <a class="text-sm font-medium hover:text-white transition-colors" href="#">Privacy Policy</a>
+              <a class="text-sm font-medium hover:text-white transition-colors" href="#">Terms of Service</a>
+            </div>
+            <p class="text-sm">© 2024 Shree Varshitha Automats. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/app.js"></script>
   </body>
 </html>
